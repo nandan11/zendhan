@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinWise India - Smart Personal Finance</title>
+    <title>Zendhan - Smart Personal Finance</title>
     <style>
         /* Reset and Base Styles */
         * {
@@ -16,18 +16,18 @@
         body {
             line-height: 1.6;
             color: #333;
-            background-color: #f8f9fa;
+            background-color: #fff;
         }
         
         a {
             text-decoration: none;
-            color: #0069ff;
+            color: #4CAF50;
         }
         
         /* Header Styles */
         header {
             background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -45,11 +45,11 @@
         .logo {
             font-size: 28px;
             font-weight: 700;
-            color: #0069ff;
+            color: #4CAF50;
         }
         
         .logo span {
-            color: #ff6b00;
+            color: #333;
         }
         
         nav ul {
@@ -69,25 +69,25 @@
         }
         
         nav ul li a:hover {
-            color: #0069ff;
+            color: #4CAF50;
         }
         
         .nav-button {
-            background-color: #0069ff;
+            background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: 600;
         }
         
         .nav-button:hover {
-            background-color: #0050c8;
+            background-color: #388E3C;
             color: white;
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #0069ff 0%, #6942ef 100%);
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -107,35 +107,6 @@
             font-size: 20px;
             margin-bottom: 30px;
             opacity: 0.9;
-        }
-        
-        .search-bar {
-            display: flex;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .search-bar input {
-            flex: 1;
-            padding: 15px 20px;
-            border: none;
-            border-radius: 6px 0 0 6px;
-            font-size: 16px;
-        }
-        
-        .search-bar button {
-            background-color: #ff6b00;
-            color: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 0 6px 6px 0;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .search-bar button:hover {
-            background-color: #e06000;
         }
         
         /* Category Cards */
@@ -169,20 +140,20 @@
         
         .card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .card-image {
             height: 150px;
-            background-color: #f0f5ff;
+            background-color: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -209,13 +180,13 @@
         
         .card-link {
             display: inline-block;
-            color: #0069ff;
+            color: #4CAF50;
             font-weight: 600;
         }
         
         /* Featured Articles */
         .featured {
-            background-color: #f0f5ff;
+            background-color: #f9f9f9;
             padding: 60px 20px;
         }
         
@@ -232,14 +203,14 @@
         
         .article-card {
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
         
         .article-image {
             height: 200px;
-            background-color: #eee;
+            background-color: #f5f5f5;
             position: relative;
         }
         
@@ -247,7 +218,7 @@
             position: absolute;
             top: 15px;
             left: 15px;
-            background-color: #ff6b00;
+            background-color: #4CAF50;
             color: white;
             padding: 5px 12px;
             border-radius: 20px;
@@ -291,13 +262,13 @@
             display: flex;
             flex-direction: column;
             background-color: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
         
         .tool-icon {
-            background-color: #f0f5ff;
+            background-color: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -324,22 +295,22 @@
         
         .tool-button {
             display: inline-block;
-            background-color: #0069ff;
+            background-color: #4CAF50;
             color: white;
             padding: 12px 20px;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: 600;
             text-align: center;
             transition: background-color 0.3s;
         }
         
         .tool-button:hover {
-            background-color: #0050c8;
+            background-color: #388E3C;
         }
         
         /* CTA Section */
         .cta {
-            background: linear-gradient(135deg, #ff6b00 0%, #ff9e50 100%);
+            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
             color: white;
             padding: 80px 20px;
             text-align: center;
@@ -370,15 +341,15 @@
         
         .primary-button {
             background-color: white;
-            color: #ff6b00;
+            color: #4CAF50;
             padding: 15px 30px;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: 600;
             transition: background-color 0.3s, transform 0.3s;
         }
         
         .primary-button:hover {
-            background-color: #f8f9fa;
+            background-color: #f5f5f5;
             transform: translateY(-2px);
         }
         
@@ -386,7 +357,7 @@
             background-color: transparent;
             color: white;
             padding: 15px 30px;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: 600;
             border: 2px solid white;
             transition: background-color 0.3s, transform 0.3s;
@@ -399,9 +370,9 @@
         
         /* Footer */
         footer {
-            background-color: #172b4d;
-            color: #f8f9fa;
-            padding: 60px 20px 30px;
+            background-color: #333;
+            color: #f5f5f5;
+            padding: 40px 20px 20px;
         }
         
         .footer-container {
@@ -431,7 +402,7 @@
         }
         
         .footer-links a {
-            color: #c5d0e6;
+            color: #bbb;
             transition: color 0.3s;
         }
         
@@ -441,53 +412,10 @@
         
         .footer-bottom {
             text-align: center;
-            padding-top: 30px;
+            padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #c5d0e6;
+            color: #bbb;
             font-size: 14px;
-        }
-        
-        /* Newsletter */
-        .newsletter {
-            margin-bottom: 40px;
-        }
-        
-        .newsletter h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: white;
-        }
-        
-        .newsletter p {
-            color: #c5d0e6;
-            margin-bottom: 20px;
-        }
-        
-        .newsletter-form {
-            display: flex;
-        }
-        
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px 15px;
-            border: none;
-            border-radius: 6px 0 0 6px;
-            font-size: 14px;
-        }
-        
-        .newsletter-form button {
-            background-color: #0069ff;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 0 6px 6px 0;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .newsletter-form button:hover {
-            background-color: #0050c8;
         }
         
         /* Responsive */
@@ -514,15 +442,15 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <div class="logo">Fin<span>Wise</span></div>
+            <div class="logo">Zendhan</div>
             <nav>
                 <ul>
-                    <li><a href="#">Mutual Funds</a></li>
-                    <li><a href="#">Savings</a></li>
-                    <li><a href="#">Tax Planning</a></li>
-                    <li><a href="#">Tools</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#" class="nav-button">Get Started</a></li>
+                    <li><a href="#mutual-funds">Mutual Funds</a></li>
+                    <li><a href="#blog">Savings</a></li>
+                    <li><a href="#tax-planning">Tax Planning</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact" class="nav-button">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -533,15 +461,11 @@
         <div class="hero-container">
             <h1>Make Smarter Financial Decisions Today</h1>
             <p>Expert advice and tools to help Indians achieve financial freedom through smart investing and saving</p>
-            <div class="search-bar">
-                <input type="text" placeholder="Search for mutual funds, investment tips, and more...">
-                <button type="submit">Search</button>
-            </div>
         </div>
     </section>
 
     <!-- Categories Section -->
-    <section class="categories">
+    <section class="categories" id="mutual-funds">
         <div class="section-heading">
             <h2>Explore Financial Topics</h2>
             <p>Find guidance on the financial topics that matter most to you</p>
@@ -554,27 +478,27 @@
                 <div class="card-content">
                     <h3>Mutual Funds</h3>
                     <p>Learn how to invest in the right mutual funds for your financial goals.</p>
-                    <a href="#" class="card-link">Explore Mutual Funds</a>
+                    <a href="#" class="card-link">Read More</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="savings">
                 <div class="card-image">
                     <img src="/api/placeholder/70/70" alt="SIP Investing">
                 </div>
                 <div class="card-content">
                     <h3>SIP Investing</h3>
                     <p>Discover the power of Systematic Investment Plans for long-term wealth creation.</p>
-                    <a href="#" class="card-link">Learn About SIPs</a>
+                    <a href="#" class="card-link">Read More</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card" id="tax-planning">
                 <div class="card-image">
                     <img src="/api/placeholder/70/70" alt="Tax Saving">
                 </div>
                 <div class="card-content">
                     <h3>Tax Planning</h3>
                     <p>Maximize your returns with tax-efficient investment strategies.</p>
-                    <a href="#" class="card-link">Save on Taxes</a>
+                    <a href="#" class="card-link">Read More</a>
                 </div>
             </div>
             <div class="card">
@@ -584,14 +508,14 @@
                 <div class="card-content">
                     <h3>Retirement Planning</h3>
                     <p>Secure your future with effective retirement planning strategies.</p>
-                    <a href="#" class="card-link">Plan Your Retirement</a>
+                    <a href="#" class="card-link">Read More</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Featured Articles -->
-    <section class="featured">
+    <section class="featured" id="blog">
         <div class="featured-container">
             <div class="section-heading">
                 <h2>Latest Financial Insights</h2>
@@ -645,7 +569,7 @@
     </section>
 
     <!-- Tools Section -->
-    <section class="tools">
+    <section class="tools" id="tools">
         <div class="section-heading">
             <h2>Financial Tools & Calculators</h2>
             <p>Plan your investments with our user-friendly financial tools</p>
@@ -695,13 +619,13 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="cta">
+    <section class="cta" id="contact">
         <div class="cta-container">
             <h2>Ready to Start Your Financial Journey?</h2>
-            <p>Join thousands of Indians who are making smarter financial decisions with FinWise's personalized guidance.</p>
+            <p>Join thousands of Indians who are making smarter financial decisions with Zendhan's personalized guidance.</p>
             <div class="cta-buttons">
-                <a href="#" class="primary-button">Get Started Now</a>
-                <a href="#" class="secondary-button">Talk to an Advisor</a>
+                <a href="#" class="primary-button">Contact Us</a>
+                <a href="#" class="secondary-button">Learn More</a>
             </div>
         </div>
     </section>
@@ -713,47 +637,33 @@
                 <div class="footer-column">
                     <h3>Topics</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Mutual Funds</a></li>
-                        <li><a href="#">SIP Investing</a></li>
-                        <li><a href="#">Tax Planning</a></li>
-                        <li><a href="#">Retirement</a></li>
-                        <li><a href="#">Emergency Fund</a></li>
-                        <li><a href="#">Child Education</a></li>
+                        <li><a href="#mutual-funds">Mutual Funds</a></li>
+                        <li><a href="#savings">SIP Investing</a></li>
+                        <li><a href="#tax-planning">Tax Planning</a></li>
+                        <li><a href="#retirement">Retirement</a></li>
+                        <li><a href="#emergency">Emergency Fund</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Tools</h3>
                     <ul class="footer-links">
-                        <li><a href="#">SIP Calculator</a></li>
-                        <li><a href="#">Fund Comparison</a></li>
-                        <li><a href="#">Retirement Planner</a></li>
-                        <li><a href="#">Tax Calculator</a></li>
-                        <li><a href="#">Goal Planner</a></li>
+                        <li><a href="#sip-calculator">SIP Calculator</a></li>
+                        <li><a href="#fund-comparison">Fund Comparison</a></li>
+                        <li><a href="#retirement-planner">Retirement Planner</a></li>
+                        <li><a href="#tax-calculator">Tax Calculator</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Company</h3>
                     <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Team</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                     </ul>
-                </div>
-                <div class="footer-column">
-                    <div class="newsletter">
-                        <h3>Subscribe to Our Newsletter</h3>
-                        <p>Get the latest financial tips and insights delivered to your inbox weekly.</p>
-                        <div class="newsletter-form">
-                            <input type="email" placeholder="Your email address">
-                            <button type="submit">Subscribe</button>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 FinWise India. All rights reserved. | Disclaimer: Investments in mutual funds are subject to market risks. Please read all scheme-related documents carefully before investing.</p>
+                <p>© 2025 Zendhan. All rights reserved. | Disclaimer: Investments in mutual funds are subject to market risks. Please read all scheme-related documents carefully before investing.</p>
             </div>
         </div>
     </footer>
