@@ -1,677 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Understanding Mutual Funds | Zendhan</title>
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: #fff;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #4CAF50;
-        }
-        
-        /* Header Styles */
-        header {
-            background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #4CAF50;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 25px;
-        }
-        
-        nav ul li a {
-            color: #444;
-            font-weight: 500;
-            transition: color 0.3s;
-            padding: 10px 0;
-        }
-        
-        nav ul li a:hover {
-            color: #4CAF50;
-        }
-        
-        .nav-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        
-        .nav-button:hover {
-            background-color: #388E3C;
-            color: white;
-        }
-        
-        /* Page Title */
-        .page-title {
-            background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
-        
-        .page-title-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        .page-title h1 {
-            font-size: 36px;
-            margin-bottom: 15px;
-        }
-        
-        .page-title p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-        
-        /* Content Area */
-        .content-area {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-        
-        .content-block {
-            margin-bottom: 40px;
-        }
-        
-        .content-block h2 {
-            font-size: 28px;
-            margin-bottom: 20px;
-            color: #333;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-        
-        .content-block h3 {
-            font-size: 22px;
-            margin: 25px 0 15px;
-            color: #444;
-        }
-        
-        .content-block p {
-            margin-bottom: 15px;
-            font-size: 16px;
-            color: #555;
-        }
-        
-        .content-block ul, .content-block ol {
-            margin-bottom: 15px;
-            padding-left: 25px;
-        }
-        
-        .content-block li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-        
-        .info-card {
-            background-color: #f9f9f9;
-            border-left: 4px solid #4CAF50;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        
-        .info-card h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .info-card p {
-            margin-bottom: 0;
-            font-size: 15px;
-        }
-        
-        /* Two Column Layout */
-        .two-column {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        /* Fund Type Cards */
-        .fund-type {
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            margin-bottom: 20px;
-        }
-        
-        .fund-type h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .fund-type p {
-            font-size: 15px;
-            color: #555;
-            margin-bottom: 10px;
-        }
-        
-        .risk-level {
-            display: flex;
-            align-items: center;
-            margin-top: 15px;
-        }
-        
-        .risk-level span {
-            font-size: 14px;
-            font-weight: 600;
-            margin-right: 10px;
-        }
-        
-        .risk-meter {
-            display: flex;
-            gap: 3px;
-        }
-        
-        .risk-unit {
-            width: 20px;
-            height: 8px;
-            background-color: #ddd;
-            border-radius: 4px;
-        }
-        
-        .risk-filled {
-            background-color: #4CAF50;
-        }
-        
-        /* FAQ Section */
-        .faq-item {
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-        
-        .faq-item h4 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        
-        .faq-item p {
-            font-size: 15px;
-            color: #555;
-        }
-        
-        /* CTA Section */
-        .cta-box {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .cta-box h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        .cta-box p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #555;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        .cta-button:hover {
-            background-color: #388E3C;
-        }
-        
-        /* Footer Styles */
-        footer {
-            background-color: #333;
-            color: #f5f5f5;
-            padding: 40px 20px 20px;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .footer-column h3 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #bbb;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bbb;
-            font-size: 14px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .two-column {
-                grid-template-columns: 1fr;
-            }
-            
-            nav ul {
-                display: none;
-            }
-            
-            .page-title h1 {
-                font-size: 28px;
-            }
-            
-            .content-block h2 {
-                font-size: 24px;
-            }
-            
-            .content-block h3 {
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">Zendhan</a>
-            <nav>
-                <ul>
-                    <li><a href="mutual-funds.html">Mutual Funds</a></li>
-                    <li><a href="index.html#savings">Savings</a></li>
-                    <li><a href="index.html#tax-planning">Tax Planning</a></li>
-                    <li><a href="index.html#tools">Tools</a></li>
-                    <li><a href="index.html#blog">Blog</a></li>
-                    <li><a href="index.html#contact" class="nav-button">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+---
+layout: default
+title: Understanding Mutual Funds
+---
 
-    <!-- Page Title -->
-    <section class="page-title">
-        <div class="page-title-container">
-            <h1>Understanding Mutual Funds</h1>
-            <p>A comprehensive guide to help you navigate the world of mutual fund investments in India</p>
-        </div>
-    </section>
+<!-- Page Title -->
+<section class="page-title">
+    <div class="page-title-container">
+        <h1>Understanding Mutual Funds</h1>
+        <p>A comprehensive guide to help you navigate the world of mutual fund investments in India</p>
+    </div>
+</section>
 
-    <!-- Content Area -->
-    <div class="content-area">
-        <div class="content-block">
-            <h2>What Are Mutual Funds?</h2>
-            <p>A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities. These securities can include stocks, bonds, money market instruments, and other assets.</p>
-            
-            <p>When you invest in a mutual fund, you're essentially buying a portion of a diversified portfolio managed by financial experts. This makes mutual funds an excellent choice for individuals who want to invest but may not have the time, knowledge, or resources to build and manage their own portfolio of securities.</p>
-            
-            <div class="info-card">
-                <h4>Key Takeaway</h4>
-                <p>Mutual funds offer small investors access to professionally managed, diversified portfolios of equities, bonds, and other securities, which would be difficult to create with a small amount of capital.</p>
-            </div>
-            
-            <h3>How Do Mutual Funds Work?</h3>
-            <p>When you invest in a mutual fund, your money is pooled with that of other investors. A professional fund manager then invests this pool according to the fund's stated objective. The fund manager conducts research, selects the securities, and monitors the fund's performance.</p>
-            
-            <p>As an investor, you own units or shares of the mutual fund, not the underlying assets directly. The value of these units, known as Net Asset Value (NAV), changes daily based on the performance of the investments held by the fund.</p>
-            
-            <p>Mutual funds can earn money in three ways:</p>
-            <ul>
-                <li><strong>Dividend payments:</strong> When companies in the portfolio pay dividends</li>
-                <li><strong>Capital gains:</strong> When securities in the fund are sold at a profit</li>
-                <li><strong>Net Asset Value (NAV) increase:</strong> When the value of the fund's holdings increases</li>
-            </ul>
+<!-- Content Area -->
+<div class="content-area">
+    <div class="content-block">
+        <h2>What Are Mutual Funds?</h2>
+        <p>A mutual fund is a professionally managed investment fund that pools money from many investors to purchase securities. These securities can include stocks, bonds, money market instruments, and other assets.</p>
+        
+        <p>When you invest in a mutual fund, you're essentially buying a portion of a diversified portfolio managed by financial experts. This makes mutual funds an excellent choice for individuals who want to invest but may not have the time, knowledge, or resources to build and manage their own portfolio of securities.</p>
+        
+        <div class="info-card">
+            <h4>Key Takeaway</h4>
+            <p>Mutual funds offer small investors access to professionally managed, diversified portfolios of equities, bonds, and other securities, which would be difficult to create with a small amount of capital.</p>
         </div>
         
-        <div class="content-block">
-            <h2>Types of Mutual Funds in India</h2>
-            <p>Mutual funds are categorized based on their investment objectives, asset classes, and risk profiles. Understanding these categories can help you select funds that align with your financial goals and risk tolerance.</p>
-            
-            <h3>Based on Asset Class</h3>
-            <div class="two-column">
-                <div class="fund-type">
-                    <h4>Equity Funds</h4>
-                    <p>Invest primarily in stocks of companies. They have the potential for high returns but come with higher risk.</p>
-                    <div class="risk-level">
-                        <span>Risk:</span>
-                        <div class="risk-meter">
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit risk-filled"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Debt Funds</h4>
-                    <p>Invest in fixed-income securities like government bonds, corporate bonds, and treasury bills. They offer more stable returns with lower risk.</p>
-                    <div class="risk-level">
-                        <span>Risk:</span>
-                        <div class="risk-meter">
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit"></div>
-                            <div class="risk-unit"></div>
-                            <div class="risk-unit"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Hybrid Funds</h4>
-                    <p>Invest in a mix of equities and debt instruments, offering a balance between risk and return.</p>
-                    <div class="risk-level">
-                        <span>Risk:</span>
-                        <div class="risk-meter">
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit"></div>
-                            <div class="risk-unit"></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Money Market Funds</h4>
-                    <p>Invest in short-term, high-quality debt securities. They are considered among the safest investment options with relatively lower returns.</p>
-                    <div class="risk-level">
-                        <span>Risk:</span>
-                        <div class="risk-meter">
-                            <div class="risk-unit risk-filled"></div>
-                            <div class="risk-unit"></div>
-                            <div class="risk-unit"></div>
-                            <div class="risk-unit"></div>
-                            <div class="risk-unit"></div>
-                        </div>
+        <h3>How Do Mutual Funds Work?</h3>
+        <p>When you invest in a mutual fund, your money is pooled with that of other investors. A professional fund manager then invests this pool according to the fund's stated objective. The fund manager conducts research, selects the securities, and monitors the fund's performance.</p>
+        
+        <p>As an investor, you own units or shares of the mutual fund, not the underlying assets directly. The value of these units, known as Net Asset Value (NAV), changes daily based on the performance of the investments held by the fund.</p>
+        
+        <p>Mutual funds can earn money in three ways:</p>
+        <ul>
+            <li><strong>Dividend payments:</strong> When companies in the portfolio pay dividends</li>
+            <li><strong>Capital gains:</strong> When securities in the fund are sold at a profit</li>
+            <li><strong>Net Asset Value (NAV) increase:</strong> When the value of the fund's holdings increases</li>
+        </ul>
+    </div>
+    
+    <div class="content-block">
+        <h2>Types of Mutual Funds in India</h2>
+        <p>Mutual funds are categorized based on their investment objectives, asset classes, and risk profiles. Understanding these categories can help you select funds that align with your financial goals and risk tolerance.</p>
+        
+        <h3>Based on Asset Class</h3>
+        <div class="two-column">
+            <div class="fund-type">
+                <h4>Equity Funds</h4>
+                <p>Invest primarily in stocks of companies. They have the potential for high returns but come with higher risk.</p>
+                <div class="risk-level">
+                    <span>Risk:</span>
+                    <div class="risk-meter">
+                        <div class="risk-unit risk-filled"></div>
+                        <div class="risk-unit risk-filled"></div>
+                        <div class="risk-unit risk-filled"></div>
+                        <div class="risk-unit risk-filled"></div>
+                        <div class="risk-unit risk-filled"></div>
                     </div>
                 </div>
             </div>
             
-            <h3>Based on Investment Strategy</h3>
-            <div class="two-column">
-                <div class="fund-type">
-                    <h4>Growth Funds</h4>
-                    <p>Focus on capital appreciation by investing in companies with high growth potential.</p>
+            <div class="fund-type">
+                <h4>Debt Funds</h4>
+                <p>Invest in fixed-income securities like government bonds, corporate bonds, and treasury bills. They offer more stable returns with lower risk.</p>
+                <div class="risk-level">
+                    <span>Risk:</span>
+                    <div class="risk-meter">
+                        <div class="risk-unit risk-filled"></div>
+                        <div class="risk-unit risk-filled"></div>
+                        <div class="risk-unit"></div>
+                        <div class="risk-unit"></div>
+                        <div class="risk-unit"></div>
+                    </div>
                 </div>
-                
-                <div class="fund-type">
-                    <h4>Value Funds</h4>
-                    <p>Invest in undervalued stocks with strong fundamentals that are expected to increase in value over time.</p>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Index Funds</h4>
-                    <p>Track a specific market index (like Nifty 50 or Sensex) by investing in the same securities in the same proportion.</p>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Dividend Yield Funds</h4>
-                    <p>Invest in companies that pay regular dividends, providing a steady income stream.</p>
-                </div>
-            </div>
-            
-            <h3>Based on Structure</h3>
-            <div class="two-column">
-                <div class="fund-type">
-                    <h4>Open-Ended Funds</h4>
-                    <p>Allow investors to buy and sell units at any time at the current Net Asset Value (NAV).</p>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Close-Ended Funds</h4>
-                    <p>Have a fixed maturity period, and investors can only buy units during the initial offering period.</p>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Interval Funds</h4>
-                    <p>Combine features of both open-ended and close-ended funds, allowing investors to buy or sell units only during specific intervals.</p>
-                </div>
-                
-                <div class="fund-type">
-                    <h4>Exchange-Traded Funds (ETFs)</h4>
-                    <p>Trade on stock exchanges like individual stocks, typically tracking an index, commodity, or basket of assets.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="content-block">
-            <h2>Benefits of Investing in Mutual Funds</h2>
-            <ul>
-                <li><strong>Professional Management:</strong> Your investments are managed by qualified professionals with expertise in market analysis and investment strategies.</li>
-                <li><strong>Diversification:</strong> Mutual funds spread investments across various securities, reducing risk compared to investing in individual stocks or bonds.</li>
-                <li><strong>Affordability:</strong> You can start investing with as little as ₹500 through Systematic Investment Plans (SIPs).</li>
-                <li><strong>Liquidity:</strong> Open-ended funds allow you to redeem your investments at any time at the current NAV.</li>
-                <li><strong>Transparency:</strong> Mutual funds disclose their holdings, NAV, and expense ratio regularly.</li>
-                <li><strong>Regulated:</strong> All mutual funds in India are regulated by the Securities and Exchange Board of India (SEBI), providing a layer of investor protection.</li>
-                <li><strong>Tax Benefits:</strong> Some mutual funds, like Equity-Linked Saving Schemes (ELSS), offer tax benefits under Section 80C of the Income Tax Act.</li>
-                <li><strong>Flexibility:</strong> Wide range of options to match different investment goals, time horizons, and risk profiles.</li>
-            </ul>
-        </div>
-        
-        <div class="content-block">
-            <h2>How to Start Investing in Mutual Funds</h2>
-            <h3>Step 1: Define Your Investment Goals</h3>
-            <p>Before investing, clarify your financial objectives. Are you saving for retirement, a home purchase, your child's education, or building an emergency fund? Your goals will influence the type of mutual funds you should consider.</p>
-            
-            <h3>Step 2: Assess Your Risk Tolerance</h3>
-            <p>Consider your comfort level with investment risk and market volatility. Your age, income stability, financial obligations, and investment timeline all affect your risk tolerance.</p>
-            
-            <h3>Step 3: Choose the Right Mutual Funds</h3>
-            <p>Based on your goals and risk tolerance, select appropriate funds from the various categories we've discussed above.</p>
-            
-            <h3>Step 4: Select Your Investment Method</h3>
-            <p>You can invest in mutual funds through:</p>
-            <ul>
-                <li><strong>Lump Sum Investment:</strong> Investing a large amount at once</li>
-                <li><strong>Systematic Investment Plan (SIP):</strong> Investing a fixed amount regularly (monthly, quarterly)</li>
-            </ul>
-            
-            <p>For most beginners, SIP is recommended as it allows you to invest small amounts regularly and benefit from rupee-cost averaging and the power of compounding.</p>
-            
-            <h3>Step 5: Complete KYC Requirements</h3>
-            <p>To invest in mutual funds in India, you need to complete the Know Your Customer (KYC) process by submitting identity and address proof documents. This is a one-time process, and once completed, you can invest in any mutual fund.</p>
-            
-            <h3>Step 6: Choose Where to Buy Mutual Funds</h3>
-            <p>You can invest in mutual funds through:</p>
-            <ul>
-                <li>Directly from Asset Management Companies (AMCs)</li>
-                <li>Through mutual fund distributors or financial advisors</li>
-                <li>Via online platforms and apps</li>
-                <li>Through banks</li>
-            </ul>
-            
-            <div class="info-card">
-                <h4>Pro Tip</h4>
-                <p>Direct plans have lower expense ratios compared to regular plans, which means more of your money is working for you. However, with direct plans, you won't receive any advisory services that come with regular plans.</p>
-            </div>
-        </div>
-        
-        <div class="content-block">
-            <h2>Understanding Important Mutual Fund Terms</h2>
-            <div class="two-column">
-                <div>
-                    <h3>Net Asset Value (NAV)</h3>
-                    <p>The price at which you buy or sell a mutual fund unit. It's calculated by dividing the total value of all the assets in a portfolio, minus liabilities, by the number of outstanding units.</p>
-                    
-                    <h3>Expense Ratio</h3>
-                    <p>The annual fee that mutual funds charge investors for managing their money. It includes management fees, administrative costs, and distribution fees. Lower expense ratios mean more of your investment works for you.</p>
-                    
-                    <h3>Exit Load</h3>
-                    <p>A fee charged when you sell or redeem your mutual fund units within a specified period after purchase. It's designed to discourage short-term investments.</p>
-                </div>
-                
-                <div>
-                    <h3>Systematic Investment Plan (SIP)</h3>
-                    <p>A method that allows you to invest a fixed amount regularly in a mutual fund. It helps build the habit of regular investing and benefits from rupee-cost averaging.</p>
-                    
-                    <h3>Systematic Withdrawal Plan (SWP)</h3>
-                    <p>Allows you to withdraw a fixed amount from your mutual fund investment at regular intervals.</p>
-                    
-                    <h3>Alpha and Beta</h3>
-                    <p><strong>Alpha:</strong> Measures a fund's performance compared to its benchmark index.<br>
-                    <strong>Beta:</strong> Measures a fund's volatility compared to the market.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="cta-box">
-            <h3>Ready to Start Your Investment Journey?</h3>
-            <p>Compare the best mutual funds in India and find the ones that match your financial goals and risk profile.</p>
-            <a href="#" class="cta-button">Explore Mutual Fund Options</a>
-        </div>
-        
-        <div class="content-block">
-            <h2>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <h4>Is investing in mutual funds safe?</h4>
-                <p>Mutual funds are generally safer than direct stock investments due to diversification. However, all investments carry some risk. The level of risk depends on the type of fund. Debt funds are generally less risky than equity funds, but also offer lower potential returns.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>How much money do I need to start investing in mutual funds?</h4>
-                <p>You can start investing in mutual funds with as little as ₹500 per month through a Systematic Investment Plan (SIP). For lump-sum investments, the minimum amount varies by fund, usually starting from ₹1,000 to ₹5,000.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>How are mutual funds taxed in India?</h4>
-                <p>Taxation depends on the type of mutual fund and the holding period:</p>
-                <ul>
-                    <li><strong>Equity Funds:</strong> Short-term capital gains (held for less than 12 months) are taxed at 15%. Long-term capital gains exceeding ₹1 lakh per year are taxed at 10% without indexation benefits.</li>
-                    <li><strong>Debt Funds:</strong> Short-term capital gains (held for less than 36 months) are added to your income and taxed as per your income tax slab. Long-term capital gains are taxed at 20% with indexation benefits.</li>
-                </ul>
-            </div>
-            
-            <div class="faq-item">
-                <h4>What is the difference between direct and regular mutual fund plans?</h4>
-                <p>Direct plans are purchased directly from the AMC without any intermediary, resulting in lower expense ratios. Regular plans are purchased through distributors who receive a commission, resulting in slightly higher expense ratios. Direct plans generally provide higher returns over the long term due to lower expenses.</p>
-            </div>
-            
-            <div class="faq-item">
-                <h4>Can I lose all my money in mutual funds?</h4>
-                <p>While it's theoretically possible, it's extremely rare to lose all your money in a mutual fund due to diversification. Even during market downturns, a well-diversified fund is unlikely to lose all its value. However, the value of your investment can decrease during market downturns.</p>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-column">
-                    <h3>Topics</h3>
-                    <ul class="footer-links">
-                        <li><a href="mutual-funds.html">Mutual Funds</a></li>
-                        <li><a href="index.html#savings">SIP Investing</a></li>
-                        <li><a href="index.html#tax-planning">Tax Planning</a></li>
-                        <li><a href="index.html#retirement">Retirement</a></li>
-                        <li><a href="index.html#emergency">Emergency Fund</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Tools</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html#tools">SIP Calculator</a></li>
-                        <li><a href="index.html#tools">Fund Comparison</a></li>
-                        <li><a href="index.html#tools">Retirement Planner</a></li>
-                        <li><a href="index.html#tools">Tax Calculator</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Company</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html#about">About Us</a></li>
-                        <li><a href="index.html#team">Our Team</a></li>
-                        <li><a href="index.html#contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2025 Zendhan. All rights reserved. | Disclaimer: Investments in mutual funds are subject to market risks. Please read all scheme-related documents carefully before investing.</p>
-            </div>
+    
+    <div class="content-block">
+        <h2>Benefits of Investing in Mutual Funds</h2>
+        <ul>
+            <li><strong>Professional Management:</strong> Your investments are managed by qualified professionals with expertise in market analysis and investment strategies.</li>
+            <li><strong>Diversification:</strong> Mutual funds spread investments across various securities, reducing risk compared to investing in individual stocks or bonds.</li>
+            <li><strong>Affordability:</strong> You can start investing with as little as ₹500 through Systematic Investment Plans (SIPs).</li>
+            <li><strong>Liquidity:</strong> Open-ended funds allow you to redeem your investments at any time at the current NAV.</li>
+        </ul>
+    </div>
+    
+    <div class="cta-box">
+        <h3>Ready to Start Your Investment Journey?</h3>
+        <p>Compare the best mutual funds in India and find the ones that match your financial goals and risk profile.</p>
+        <a href="#" class="cta-button">Explore Mutual Fund Options</a>
+    </div>
+    
+    <div class="content-block">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <h4>Is investing in mutual funds safe?</h4>
+            <p>Mutual funds are generally safer than direct stock investments due to diversification. However, all investments carry some risk. The level of risk depends on the type of fund. Debt funds are generally less risky than equity funds, but also offer lower potential returns.</p>
         </div>
-    </footer>
-</body>
-</html>
+        
+        <div class="faq-item">
+            <h4>How much money do I need to start investing in mutual funds?</h4>
+            <p>You can start investing in mutual funds with as little as ₹500 per month through a Systematic Investment Plan (SIP). For lump-sum investments, the minimum amount varies by fund, usually starting from ₹1,000 to ₹5,000.</p>
+        </div>
+    </div>
+</div>
