@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Zendhan</title>
+    <style>
+        /* Copy your existing CSS here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Add the rest of your CSS here */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="{{ '/' | relative_url }}" class="logo">Zendhan</a>
+            <nav>
+                <ul>
+                    <li><a href="{{ '/mutual-funds.html' | relative_url }}">Mutual Funds</a></li>
+                    <li><a href="{{ '/#blog' | relative_url }}">Savings</a></li>
+                    <li><a href="{{ '/#tax-planning' | relative_url }}">Tax Planning</a></li>
+                    <li><a href="{{ '/#tools' | relative_url }}">Tools</a></li>
+                    <li><a href="{{ '/#blog' | relative_url }}">Blog</a></li>
+                    <li><a href="{{ '/#contact' | relative_url }}" class="nav-button">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    {{ content }}
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Your footer content -->
+            </div>
+            <div class="footer-bottom">
+                <p>© {{ site.time | date: '%Y' }} Zendhan. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
