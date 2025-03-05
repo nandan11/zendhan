@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinWise India - Smart Personal Finance</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0069ff;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0069ff;
+        }
+        
+        .logo span {
+            color: #ff6b00;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: #444;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 10px 0;
+        }
+        
+        nav ul li a:hover {
+            color: #0069ff;
+        }
+        
+        .nav-button {
+            background-color: #0069ff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .nav-button:hover {
+            background-color: #0050c8;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0069ff 0%, #6942ef 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .search-bar {
+            display: flex;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 6px 0 0 6px;
+            font-size: 16px;
+        }
+        
+        .search-bar button {
+            background-color: #ff6b00;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 0 6px 6px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .search-bar button:hover {
+            background-color: #e06000;
+        }
+        
+        /* Category Cards */
+        .categories {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-heading h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .section-heading p {
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-image {
+            height: 150px;
+            background-color: #f0f5ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .card-image img {
+            max-width: 70px;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .card-link {
+            display: inline-block;
+            color: #0069ff;
+            font-weight: 600;
+        }
+        
+        /* Featured Articles */
+        .featured {
+            background-color: #f0f5ff;
+            padding: 60px 20px;
+        }
+        
+        .featured-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .article-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+        }
+        
+        .article-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #ff6b00;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .article-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .article-meta {
+            display: flex;
+            color: #888;
+            font-size: 14px;
+            align-items: center;
+        }
+        
+        .article-meta span {
+            margin-right: 15px;
+        }
+        
+        /* Tools Section */
+        .tools {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .tool-card {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .tool-icon {
+            background-color: #f0f5ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+        
+        .tool-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tool-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .tool-card p {
+            color: #666;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .tool-button {
+            display: inline-block;
+            background-color: #0069ff;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        
+        .tool-button:hover {
+            background-color: #0050c8;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff9e50 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .primary-button {
+            background-color: white;
+            color: #ff6b00;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .primary-button:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .secondary-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #172b4d;
+            color: #f8f9fa;
+            padding: 60px 20px 30px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #c5d0e6;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #c5d0e6;
+            font-size: 14px;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            margin-bottom: 40px;
+        }
+        
+        .newsletter h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .newsletter p {
+            color: #c5d0e6;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 6px 0 0 6px;
+            font-size: 14px;
+        }
+        
+        .newsletter-form button {
+            background-color: #0069ff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 6px 6px 0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background-color: #0050c8;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .article-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Fin<span>Wise</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Mutual Funds</a></li>
+                    <li><a href="#">Savings</a></li>
+                    <li><a href="#">Tax Planning</a></li>
+                    <li><a href="#">Tools</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#" class="nav-button">Get Started</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1>Make Smarter Financial Decisions Today</h1>
+            <p>Expert advice and tools to help Indians achieve financial freedom through smart investing and saving</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for mutual funds, investment tips, and more...">
+                <button type="submit">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="section-heading">
+            <h2>Explore Financial Topics</h2>
+            <p>Find guidance on the financial topics that matter most to you</p>
+        </div>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/70/70" alt="Mutual Funds">
+                </div>
+                <div class="card-content">
+                    <h3>Mutual Funds</h3>
+                    <p>Learn how to invest in the right mutual funds for your financial goals.</p>
+                    <a href="#" class="card-link">Explore Mutual Funds</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/70/70" alt="SIP Investing">
+                </div>
+                <div class="card-content">
+                    <h3>SIP Investing</h3>
+                    <p>Discover the power of Systematic Investment Plans for long-term wealth creation.</p>
+                    <a href="#" class="card-link">Learn About SIPs</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/70/70" alt="Tax Saving">
+                </div>
+                <div class="card-content">
+                    <h3>Tax Planning</h3>
+                    <p>Maximize your returns with tax-efficient investment strategies.</p>
+                    <a href="#" class="card-link">Save on Taxes</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="/api/placeholder/70/70" alt="Retirement">
+                </div>
+                <div class="card-content">
+                    <h3>Retirement Planning</h3>
+                    <p>Secure your future with effective retirement planning strategies.</p>
+                    <a href="#" class="card-link">Plan Your Retirement</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="featured">
+        <div class="featured-container">
+            <div class="section-heading">
+                <h2>Latest Financial Insights</h2>
+                <p>Expert advice to help you make informed financial decisions</p>
+            </div>
+            <div class="article-grid">
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="/api/placeholder/350/200" alt="Mutual Funds">
+                        <span class="article-tag">Investing</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>5 Best Mutual Funds for First-Time Investors in 2025</h3>
+                        <p>Discover the top mutual funds that are perfect for beginners looking to start their investment journey.</p>
+                        <div class="article-meta">
+                            <span>5 min read</span>
+                            <span>March 1, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="/api/placeholder/350/200" alt="Tax Planning">
+                        <span class="article-tag">Tax</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>How to Optimize Your Tax Savings with ELSS Funds</h3>
+                        <p>Learn how Equity Linked Savings Schemes can help you save taxes while building wealth for the future.</p>
+                        <div class="article-meta">
+                            <span>7 min read</span>
+                            <span>February 28, 2025</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-image">
+                        <img src="/api/placeholder/350/200" alt="Emergency Fund">
+                        <span class="article-tag">Savings</span>
+                    </div>
+                    <div class="article-content">
+                        <h3>Building an Emergency Fund: How Much Do You Really Need?</h3>
+                        <p>Find out how to calculate the right emergency fund size for your specific situation in India.</p>
+                        <div class="article-meta">
+                            <span>6 min read</span>
+                            <span>February 25, 2025</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="tools">
+        <div class="section-heading">
+            <h2>Financial Tools & Calculators</h2>
+            <p>Plan your investments with our user-friendly financial tools</p>
+        </div>
+        <div class="card-grid">
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="/api/placeholder/50/50" alt="SIP Calculator">
+                </div>
+                <div class="tool-content">
+                    <h3>SIP Calculator</h3>
+                    <p>Calculate how your SIP investments can grow over time with our easy-to-use calculator.</p>
+                    <a href="#" class="tool-button">Use Calculator</a>
+                </div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="/api/placeholder/50/50" alt="Mutual Fund Comparison">
+                </div>
+                <div class="tool-content">
+                    <h3>Fund Comparison</h3>
+                    <p>Compare different mutual funds side by side to make an informed investment decision.</p>
+                    <a href="#" class="tool-button">Compare Funds</a>
+                </div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="/api/placeholder/50/50" alt="Retirement Calculator">
+                </div>
+                <div class="tool-content">
+                    <h3>Retirement Planner</h3>
+                    <p>Plan your retirement corpus and required monthly savings to achieve your retirement goals.</p>
+                    <a href="#" class="tool-button">Plan Retirement</a>
+                </div>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon">
+                    <img src="/api/placeholder/50/50" alt="Tax Calculator">
+                </div>
+                <div class="tool-content">
+                    <h3>Tax Calculator</h3>
+                    <p>Estimate your tax liability and identify potential tax-saving investment opportunities.</p>
+                    <a href="#" class="tool-button">Calculate Tax</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2>Ready to Start Your Financial Journey?</h2>
+            <p>Join thousands of Indians who are making smarter financial decisions with FinWise's personalized guidance.</p>
+            <div class="cta-buttons">
+                <a href="#" class="primary-button">Get Started Now</a>
+                <a href="#" class="secondary-button">Talk to an Advisor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>Topics</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mutual Funds</a></li>
+                        <li><a href="#">SIP Investing</a></li>
+                        <li><a href="#">Tax Planning</a></li>
+                        <li><a href="#">Retirement</a></li>
+                        <li><a href="#">Emergency Fund</a></li>
+                        <li><a href="#">Child Education</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">SIP Calculator</a></li>
+                        <li><a href="#">Fund Comparison</a></li>
+                        <li><a href="#">Retirement Planner</a></li>
+                        <li><a href="#">Tax Calculator</a></li>
+                        <li><a href="#">Goal Planner</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <div class="newsletter">
+                        <h3>Subscribe to Our Newsletter</h3>
+                        <p>Get the latest financial tips and insights delivered to your inbox weekly.</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="submit">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FinWise India. All rights reserved. | Disclaimer: Investments in mutual funds are subject to market risks. Please read all scheme-related documents carefully before investing.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
