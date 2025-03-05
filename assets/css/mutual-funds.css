@@ -66,3 +66,37 @@
     border-bottom: 1px solid #eee;
     padding-bottom: 25px;
 }
+/* Color-coded risk meter */
+.risk-level {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.risk-level span {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.risk-meter {
+    display: flex;
+    gap: 3px;
+    height: 8px;
+    width: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+/* Risk levels with color coding */
+.risk-high {
+    background: linear-gradient(to right, #ffcc00, #ff6b6b);
+}
+
+.risk-medium {
+    background: linear-gradient(to right, #8BC34A, #ffcc00);
+}
+
+.risk-low {
+    background: #8BC34A;
+}
