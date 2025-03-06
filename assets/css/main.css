@@ -488,3 +488,59 @@ footer {
   background-color: #f0f0f0;
   color: #4CAF50;
 }
+/* Improved Quick Navigation Styles */
+.quick-navigation {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+.quick-navigation ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quick-navigation li {
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.quick-navigation li a {
+    color: #2c3e50;
+    text-decoration: none;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+}
+
+.quick-navigation li a:hover {
+    background-color: #e0e0e0;
+    color: #007bff;
+}
+
+/* Mutual Funds Section Improvements */
+.mutual-funds-section {
+    display: flex;
+    flex-direction: column;
+    min-height: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mutual-funds-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.key-takeaway {
+    background-color: #f0f4f8;
+    border-left: 4px solid #4CAF50;
+    padding: 15px;
+    margin-top: 15px;
+}
