@@ -12,15 +12,23 @@
         <div class="header-container">
             <a href="{{ '/' | relative_url }}" class="logo">Zendhan</a>
             <nav>
-                <ul>
-                    <li><a href="{{ '/mutual-funds.html' | relative_url }}">Mutual Funds</a></li>
-                    <li><a href="{{ '/#savings' | relative_url }}">Savings</a></li>
-                    <li><a href="{{ '/#tax-planning' | relative_url }}">Tax Planning</a></li>
-                    <li><a href="{{ '/#tools' | relative_url }}">Tools</a></li>
-                    <li><a href="{{ '/#blog' | relative_url }}">Blog</a></li>
-                    <li><a href="{{ '/#contact' | relative_url }}" class="nav-button">Contact</a></li>
-                </ul>
-            </nav>
+    <ul>
+        <li class="nav-dropdown">
+            <a href="#">Mutual Funds</a>
+            <div class="dropdown-content">
+                <a href="/mutual-funds.html#what-are-mutual-funds">What are Mutual Funds</a>
+                <a href="/mutual-funds.html#types-of-mutual-funds">Types of Mutual Funds</a>
+                <a href="/mutual-funds.html#benefits-of-investing">Benefits of Mutual Funds</a>
+                <a href="/mutual-funds.html#how-to-invest">How to Invest</a>
+            </div>
+        </li>
+        <li><a href="index.html#savings">Savings</a></li>
+        <li><a href="index.html#tax-planning">Tax Planning</a></li>
+        <li><a href="index.html#tools">Tools</a></li>
+        <li><a href="index.html#blog">Blog</a></li>
+        <li><a href="index.html#contact" class="nav-button">Contact</a></li>
+    </ul>
+</nav>
         </div>
     </header>
 
