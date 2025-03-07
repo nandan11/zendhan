@@ -309,22 +309,23 @@ Each fund type card has consistent height
 The risk meter stays properly aligned
 The "Learn More" button always appears at the bottom of its container
 The button stretches to match the width of its contain*/
-.fund-type {
-  /* Ensure consistent height and layout */
+
+.two-column .fund-type {
   display: flex;
   flex-direction: column;
   height: 100%;
-  min-height: 250px; /* Set a minimum height */
+  min-height: 300px; /* Increased minimum height */
+  justify-content: space-between; /* Distribute content evenly */
 }
 
-/* Fix for the Money Market Funds button */
 .fund-type .learn-more-button {
-  margin-top: auto; /* Push button to bottom */
-  align-self: stretch; /* Make button full width */
+  margin-top: 15px; /* Consistent spacing */
+  width: 100%; /* Full width button */
   text-align: center;
+  align-self: flex-end; /* Place at bottom */
 }
 
-/* Ensure consistent risk meter placement */
-.risk-level {
-  margin-bottom: 15px; /* Add space before the button */
+.fund-type .risk-level {
+  margin: 15px 0; /* Consistent spacing above and below */
+  width: 100%; /* Ensure full width */
 }
