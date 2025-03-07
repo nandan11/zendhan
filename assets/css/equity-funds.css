@@ -1,0 +1,22 @@
+/* For centered banner */
+.page-title {
+  background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.page-title-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* For wider navigation */
+.quick-navigation {
+  width: 280px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
