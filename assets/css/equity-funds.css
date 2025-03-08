@@ -410,35 +410,3 @@ html {
   max-width: 800px !important;
   margin: 0 auto !important;
 }
-/* Replace your current page title styling with this */
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.page-title {
-  background: #6ab04c !important;
-  padding: 40px 0 !important;
-  text-align: center !important;
-  margin-bottom: 30px !important;
-  /* REMOVE width: 100% - this is causing it to span full width */
-}
-
-/* Add these new rules to ensure proper alignment with the content */
-.page-layout {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* This next rule is crucial - it makes the title section match the content width */
-body > .page-title {
-  /* Add a max-width that matches your content area */
-  /* This constrains the green background to the same width as content */
-  max-width: 1200px !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-  box-sizing: border-box !important;
-}
