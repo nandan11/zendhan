@@ -410,3 +410,13 @@ html {
   max-width: 800px !important;
   margin: 0 auto !important;
 }
+/* Wider quick navigation for equity funds page */
+.quick-navigation {
+  width: 300px !important; /* Increase from 250px to a wider value */
+}
+
+.quick-navigation a {
+  white-space: nowrap !important; /* Prevents text wrapping within links */
+  overflow: hidden !important; /* Hides any overflow */
+  text-overflow: ellipsis !important; /* Shows ellipsis (...) for any overflow */
+}
