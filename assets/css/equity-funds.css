@@ -384,7 +384,7 @@ html {
 }
 /* Page title styling to match mutual funds page */
 .page-title {
-  background-color: #6ab04c !important; /* Solid green color to match mutual funds page */
+  background: #6ab04c !important; /* Solid green color to match mutual funds page */
   padding: 40px 0 !important;
   text-align: center !important;
   margin-bottom: 30px !important;
