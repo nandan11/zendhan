@@ -382,3 +382,30 @@ html {
   background-color: #e0e0e0;
   color: #4CAF50;
 }
+/* Page title styling to match mutual funds page */
+.page-title {
+  background: linear-gradient(to right, #6ab04c, #badc58);
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page-title-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.page-title p {
+  font-size: 1.2rem;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
