@@ -412,7 +412,7 @@ html {
 }
 /* Wider quick navigation for equity funds page */
 .quick-navigation {
-  width: 300px !important; /* Increase from 250px to a wider value */
+  width: 400px !important; /* Increase from 250px to a wider value */
 }
 
 .quick-navigation a {
