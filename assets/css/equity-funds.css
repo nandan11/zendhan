@@ -410,13 +410,13 @@ html {
   max-width: 800px !important;
   margin: 0 auto !important;
 }
-/* Wider quick navigation for equity funds page */
+/* Wider quick navigation for equity funds page with full text visibility */
 .quick-navigation {
-  width: 400px !important; /* Increase from 250px to a wider value */
+  width: 320px !important; /* Increased width to fit longer navigation items */
 }
 
 .quick-navigation a {
-  white-space: nowrap !important; /* Prevents text wrapping within links */
-  overflow: hidden !important; /* Hides any overflow */
-  text-overflow: ellipsis !important; /* Shows ellipsis (...) for any overflow */
+  white-space: normal !important; /* Allow text to wrap naturally if needed */
+  word-break: keep-all !important; /* Prevents breaking words */
+  overflow: visible !important; /* Ensures content isn't hidden */
 }
