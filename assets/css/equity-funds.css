@@ -414,7 +414,7 @@ html {
 /* Update the width for desktop */
 @media (min-width: 769px) {
   .quick-navigation {
-    width: 280px; /* Increased width for desktop */
+    width: 300px; /* Increased width for desktop */
   }
 }
 
