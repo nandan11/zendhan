@@ -419,10 +419,10 @@ nav.quick-navigation,
 div.quick-navigation,
 .page-layout .quick-navigation,
 body .page-layout .quick-navigation {
-  min-width: 300px !important;
-  width: 300px !important;
-  max-width: 300px !important;
-  flex-basis: 300px !important;
+  min-width: 280px !important;
+  width: 280px !important;
+  max-width: 280px !important;
+  flex-basis: 280px !important;
   flex-shrink: 0 !important;
 }
 
