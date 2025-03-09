@@ -329,3 +329,39 @@ The button stretches to match the width of its contain*/
   margin: 15px 0; /* Consistent spacing above and below */
   width: 100%; /* Ensure full width */
 }
+/* Add this to your shared mutual-funds.css file to fix alignment on both pages */
+
+/* Fix content alignment for main headings and content */
+.main-content h2,
+.content-area h2,
+.main-content > h2,
+.content-area > h2 {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.content-area {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Ensure content blocks align properly */
+.content-block {
+  padding-left: 0;
+  margin-left: 0;
+}
+
+/* Fix spacing between page title and first heading */
+.page-title {
+  margin-bottom: 30px;
+}
+
+.content-block:first-of-type {
+  margin-top: 20px;
+}
+
+/* Fix width of main content */
+.main-content {
+  padding-left: 0;
+  padding-right: 0;
+}
