@@ -411,15 +411,18 @@ html {
   margin: 0 auto !important;
 }
 
-/* Wider quick navigation for desktop only */
+/* Update the width for desktop */
 @media (min-width: 769px) {
   .quick-navigation {
-    width: 250px; /* Standard width for desktop */
+    width: 280px; /* Increased width for desktop */
   }
 }
 
+/* Optional: Make the text styling more compact */
 .quick-navigation a {
-  white-space: normal !important; /* Allow text to wrap naturally if needed */
-  word-break: keep-all !important; /* Prevents breaking words */
-  overflow: visible !important; /* Ensures content isn't hidden */
+  white-space: normal; /* Keep this to allow wrapping if absolutely needed */
+  word-break: keep-all; /* Keep this */
+  overflow: visible; /* Keep this */
+  padding: 8px 10px; /* Slightly more compact padding */
+  line-height: 1.3; /* Tighter line height */
 }
