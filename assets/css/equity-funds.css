@@ -410,9 +410,12 @@ html {
   max-width: 800px !important;
   margin: 0 auto !important;
 }
-/* Wider quick navigation for equity funds page with full text visibility */
-.quick-navigation {
-  width: 500px !important; /* Increased width to fit longer navigation items */
+
+/* Wider quick navigation for desktop only */
+@media (min-width: 769px) {
+  .quick-navigation {
+    width: 250px; /* Standard width for desktop */
+  }
 }
 
 .quick-navigation a {
