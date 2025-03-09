@@ -415,6 +415,7 @@ html {
 @media (min-width: 769px) {
   .quick-navigation {
     width: 300px; /* Increased width for desktop */
+    background-color: pink; 
   }
 }
 
