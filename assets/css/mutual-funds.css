@@ -363,10 +363,10 @@ The button stretches to match the width of its contain*/
 /* Fix width of main content */
 .main-content {
   padding-left: 0;
+  padding-right: 0;
+}
 
-  /* Reset risk meter styling that was affected by the alignment fixes */
-
-/* Restore the proper risk meter container and scale styling */
+/* Reset risk meter styling that was affected by the alignment fixes */
 .risk-meter-container {
   position: relative;
   width: 100%;
@@ -418,11 +418,16 @@ The button stretches to match the width of its contain*/
   width: 100%;
   padding: 0 2px;
 }
-  padding-right: 0;
-}
-/* Prevent risk meter text wrapping on desktop */
+
+/* Stronger fix for risk meter text wrapping on desktop */
 @media (min-width: 768px) {
-  .fund-type .risk-level span {
+  .risk-level span {
+    display: inline-block;
+    white-space: nowrap;
+    width: auto;
+  }
+  
+  .fund-type .risk-level {
     white-space: nowrap;
   }
 }
