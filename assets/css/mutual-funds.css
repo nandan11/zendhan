@@ -356,3 +356,46 @@ h2[id="what-are-mutual-funds"] {
   display: block !important;
   white-space: nowrap !important;
 }
+/* Make buttons maintain consistent height regardless of text content */
+.learn-more-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* Set a fixed minimum height for all buttons */
+  text-align: center;
+  width: 100%;
+}
+
+/* Make fund type cards have a more consistent layout */
+.fund-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Push the button to the bottom of the card */
+.fund-type .learn-more-button {
+  margin-top: auto;
+}/* Make buttons maintain consistent height regardless of text content */
+.learn-more-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px; /* Set a fixed minimum height for all buttons */
+  text-align: center;
+  width: 100%;
+}
+
+/* Make fund type cards have a more consistent layout */
+.fund-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Push the button to the bottom of the card */
+.fund-type .learn-more-button {
+  margin-top: auto;
+}
