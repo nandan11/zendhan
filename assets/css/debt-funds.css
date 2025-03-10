@@ -162,7 +162,7 @@ html {
 
 /* Page title styling */
 .page-title {
-  margin-bottom: 30px;
+  margin-bottom: 15px; /* Reduced from 30px to bring content closer to title */
 }
 
 .page-title-container h1 {
@@ -195,7 +195,7 @@ html {
 }
 
 .content-block:first-of-type {
-  margin-top: 20px;
+  margin-top: 10px; /* Reduced from 20px to decrease space after title */
 }
 
 /* Responsive adjustments */
