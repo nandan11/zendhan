@@ -353,11 +353,11 @@ The button stretches to match the width of its contain*/
 
 /* Fix spacing between page title and first heading */
 .page-title {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .content-block:first-of-type {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* Fix width of main content */
@@ -419,4 +419,10 @@ The button stretches to match the width of its contain*/
   padding: 0 2px;
 }
   padding-right: 0;
+}
+/* Prevent risk meter text wrapping on desktop */
+@media (min-width: 768px) {
+  .fund-type .risk-level span {
+    white-space: nowrap;
+  }
 }
