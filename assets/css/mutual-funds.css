@@ -459,3 +459,37 @@ The button stretches to match the width of its contain*/
 .content-block:first-of-type h2:first-child {
   margin-top: 20px !important;
 }
+/* Add this at the very end of your mutual-funds.css file */
+
+/* Force risk meter text to stay on one line with !important */
+.fund-type [class*="risk-"] {
+  white-space: nowrap !important;
+}
+
+.fund-type .risk-level {
+  white-space: nowrap !important;
+}
+
+.fund-type .risk-level span {
+  white-space: nowrap !important;
+  display: inline !important;
+}
+
+/* Force reduced spacing between title and first heading */
+.page-title,
+.page-title-container {
+  margin-bottom: 10px !important;
+  padding-bottom: 0 !important;
+}
+
+h2[id="what-are-mutual-funds"],
+.main-content > h2:first-of-type,
+.content-area > h2:first-of-type,
+.content-block:first-of-type > h2:first-of-type {
+  margin-top: 15px !important;
+  padding-top: 0 !important;
+}
+
+.content-block:first-of-type {
+  margin-top: 0 !important;
+}
