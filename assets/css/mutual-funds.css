@@ -399,3 +399,36 @@ h2[id="what-are-mutual-funds"] {
 .fund-type .learn-more-button {
   margin-top: auto;
 }
+/* Fix risk meter alignment across fund types */
+.fund-type {
+  position: relative;
+  padding-bottom: 70px; /* Create space for risk meter at bottom */
+}
+
+.fund-type .risk-level {
+  position: absolute;
+  bottom: 60px; /* Position above the button */
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px); /* Account for padding */
+}
+
+.risk-meter-container {
+  margin-top: 8px; /* Consistent spacing after the risk text */
+  height: 20px; /* Consistent height */
+}
+
+.risk-scale-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px; /* Space before button */
+}
+
+/* Ensure buttons stay at the very bottom */
+.fund-type .learn-more-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px);
+}
