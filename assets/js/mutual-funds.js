@@ -29,3 +29,19 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', highlightNavigation);
     highlightNavigation(); // Call once to set initial state
 });
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+  
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', function() {
+      // Toggle active class on the question
+      this.classList.toggle('active');
+      
+      // Toggle active class on the answer
+      const answer = this.nextElementSibling;
+      answer.classList.toggle('active');
+    });
+  });
+});
+</script>
