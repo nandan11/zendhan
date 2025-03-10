@@ -399,36 +399,44 @@ h2[id="what-are-mutual-funds"] {
 .fund-type .learn-more-button {
   margin-top: auto;
 }
-/* Fix risk meter alignment across fund types */
+/* Better risk meter and button alignment */
 .fund-type {
-  position: relative;
-  padding-bottom: 70px; /* Create space for risk meter at bottom */
-}
-
-.fund-type .risk-level {
-  position: absolute;
-  bottom: 60px; /* Position above the button */
-  left: 20px;
-  right: 20px;
-  width: calc(100% - 40px); /* Account for padding */
-}
-
-.risk-meter-container {
-  margin-top: 8px; /* Consistent spacing after the risk text */
-  height: 20px; /* Consistent height */
-}
-
-.risk-scale-wrapper {
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px; /* Space before button */
+  height: 100%;
+  min-height: 300px;
 }
 
-/* Ensure buttons stay at the very bottom */
+.fund-type > h3,
+.fund-type > p {
+  margin-bottom: 15px;
+}
+
+/* Create flex spaces to push items to desired positions */
+.fund-type .risk-level {
+  margin-top: auto;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
 .fund-type .learn-more-button {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  width: calc(100% - 40px);
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* Ensure risk text doesn't wrap */
+.risk-level span {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Make all buttons same height */
+.learn-more-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  text-align: center;
 }
