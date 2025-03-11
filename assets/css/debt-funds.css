@@ -204,26 +204,6 @@ html {
   margin: 0 auto;
 }
 
-/* Fix alignment issues */
-/*
-.main-content h2,
-.content-area h2,
-.main-content > h2,
-.content-area > h2 {
-  padding-left: 0;
-  margin-left: 0;
-}
-
-.content-area {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.content-block {
-  padding-left: 0;
-  margin-left: 0;
-}*/
-
 .content-block:first-of-type {
   margin-top: 10px; /* Reduced from 20px to decrease space after title */
 }
