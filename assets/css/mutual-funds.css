@@ -322,6 +322,7 @@ html {
 }
 
 /* FIX 2: REDUCE GAP BETWEEN TITLE AND FIRST HEADING */
+/*
 .page-title {
   margin-bottom: 10px !important;
 }
@@ -337,7 +338,7 @@ html {
 .main-content h2:first-of-type,
 h2[id="what-are-mutual-funds"] {
   margin-top: 20px !important;
-}
+}*/
 
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
