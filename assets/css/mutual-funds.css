@@ -322,7 +322,7 @@ html {
 }
 
 /* FIX 2: REDUCE GAP BETWEEN TITLE AND FIRST HEADING */
-/*
+
 .page-title {
   margin-bottom: 10px !important;
 }
@@ -338,35 +338,8 @@ html {
 .main-content h2:first-of-type,
 h2[id="what-are-mutual-funds"] {
   margin-top: 20px !important;
-}*/
-/* Page title styling to match mutual funds page */
-.page-title {
-  background: #6ab04c !important; /* Solid green color to match mutual funds page */
-  padding: 40px 0 !important;
-  text-align: center !important;
-  margin-bottom: 30px !important;
-  width: 100% !important;
 }
 
-.page-title-container {
-  max-width: 800px !important;
-  margin: 0 auto !important;
-  padding: 20px !important;
-}
-
-.page-title h1 {
-  font-size: 2.5rem !important;
-  margin-bottom: 10px !important;
-  color: white !important;
-  font-weight: 600 !important;
-}
-
-.page-title p {
-  font-size: 1.2rem !important;
-  color: white !important;
-  max-width: 800px !important;
-  margin: 0 auto !important;
-}
 
 /* Additional mobile optimizations */
 @media (max-width: 480px) {
