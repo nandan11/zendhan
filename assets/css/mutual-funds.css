@@ -11,7 +11,33 @@ html {
   padding: 20px;
 }
 
-/* Basic content styling */
+/* Main content area */
+.main-content {
+  flex-grow: 1;
+}
+
+/* Page title styling */
+.page-title {
+  margin-bottom: 30px;
+}
+
+.page-title-container {
+  padding: 20px 0;
+}
+
+.page-title h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.page-title p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 800px;
+}
+
+/* Content blocks */
 .content-block {
   margin-bottom: 40px;
 }
@@ -448,7 +474,7 @@ html {
   }
 }
 
-/* Add this CSS to your mutual-funds.css file */
+
 
 /* Accordion FAQ styling */
 .faq-accordion {
@@ -517,21 +543,4 @@ html {
   margin-bottom: 15px;
 }
 
-/* FIX 2: REDUCE GAP BETWEEN TITLE AND FIRST HEADING */
 
-.page-title {
-  margin-bottom: 10px !important;
-}
-
-.page-title-container {
-  margin-bottom: 10px !important;
-}
-
-.content-block:first-of-type {
-  margin-top: 0 !important;
-}
-
-.main-content h2:first-of-type,
-h2[id="what-are-mutual-funds"] {
-  margin-top: 10px !important;
-}
