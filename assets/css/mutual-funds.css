@@ -447,7 +447,7 @@ h2[id="what-are-mutual-funds"] {
   
   .quick-navigation {
     width: 100%;
-    position: static;
+    position: sticky;
     margin-bottom: 20px;
     margin-right: 0;
   }
