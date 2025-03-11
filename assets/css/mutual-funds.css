@@ -14,32 +14,47 @@ html {
 /* Main content area */
 .main-content {
   flex-grow: 1;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Page title styling */
 .page-title {
-  margin-bottom: 30px;
+  background: #6ab04c; /* Solid green color */
+  padding: 40px 0;
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
 }
 
 .page-title-container {
-  padding: 20px 0;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 10px;
 }
 
 .page-title h1 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #333;
+  color: white;
+  font-weight: 600;
 }
 
 .page-title p {
   font-size: 1.2rem;
-  color: #666;
+  color: white;
   max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Content blocks */
 .content-block {
   margin-bottom: 40px;
+}
+
+.content-block:first-of-type {
+  margin-top: 0;
 }
 
 .content-block p {
@@ -52,6 +67,11 @@ html {
   margin-bottom: 25px;
   font-size: 1.6rem;
   color: #333;
+}
+
+.main-content h2:first-of-type,
+h2[id="what-are-mutual-funds"] {
+  margin-top: 20px;
 }
 
 .content-block h3 {
@@ -69,6 +89,57 @@ html {
 .content-block li {
   margin-bottom: 10px;
   line-height: 1.6;
+}
+
+/* Quick navigation sidebar */
+.quick-navigation {
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  width: 250px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 30px;
+}
+
+.quick-navigation h3 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+}
+
+.quick-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quick-navigation li {
+  margin: 0;
+  width: 100%;
+}
+
+.quick-navigation a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 10px;
+  display: block;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.quick-navigation a:hover,
+.quick-navigation a.active {
+  background-color: #e0e0e0;
+  color: #4CAF50;
 }
 
 /* Info cards and example blocks */
@@ -91,7 +162,7 @@ html {
   margin-left: 25px;
 }
 
-/* Fund type cards grid */
+/* Two-column layout and Fund cards */
 .two-column {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -99,7 +170,6 @@ html {
   margin: 25px 0;
 }
 
-/* Fund type card styling */
 .fund-type {
   background-color: white;
   border-radius: 8px;
@@ -113,28 +183,35 @@ html {
   justify-content: space-between;
 }
 
-/* FAQ item styling */
-.faq-item {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 25px;
+.fund-type > h3,
+.fund-type > p {
+  margin-bottom: 15px;
 }
 
-/* Risk meter styling - FIX 1: NO TEXT WRAPPING */
+.fund-type h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Risk meter styling */
 .risk-level {
   display: flex;
   flex-direction: column;
   margin: 15px 0;
   width: 100%;
   padding-top: 10px;
+  margin-top: auto;
+  margin-bottom: 15px;
 }
 
 .risk-level span {
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 8px;
-  white-space: nowrap;
+  white-space: nowrap !important;
   display: inline-block;
+  width: 100%;
 }
 
 .risk-meter-container {
@@ -194,114 +271,12 @@ html {
   padding: 0 2px;
 }
 
-/* Page layout with sidebar */
-.page-layout {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Sticky sidebar navigation */
-.quick-navigation {
-  position: sticky;
-  top: 20px;
-  align-self: flex-start;
-  width: 250px;
-  max-height: 90vh;
-  overflow-y: auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-right: 30px;
-}
-
-.quick-navigation h3 {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #333;
-}
-
-.quick-navigation ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.quick-navigation li {
-  margin: 0;
-  width: 100%;
-}
-
-.quick-navigation a {
-  text-decoration: none;
-  color: #333;
-  font-size: 16px;
-  padding: 10px;
-  display: block;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.quick-navigation a:hover,
-.quick-navigation a.active {
-  background-color: #e0e0e0;
-  color: #4CAF50;
-}
-
-.main-content {
-  flex-grow: 1;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .page-layout {
-    flex-direction: column;
-  }
-  
-  .quick-navigation {
-    width: 100%;
-    position: static;
-    margin-bottom: 20px;
-    margin-right: 0;
-  }
-  
-  .fund-details {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Fund type page elements */
-.subtopic-navigation {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 25px 0;
-}
-
-.subtopic-navigation a {
-  background-color: #f5f5f5;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-.subtopic-navigation a:hover {
-  background-color: #e0e0e0;
-  color: #4CAF50;
-}
-
-/* Learn more button styling */
+/* Button styling */
 .learn-more-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
   background-color: #4CAF50;
   color: white;
   padding: 10px 15px;
@@ -313,11 +288,29 @@ html {
   text-align: center;
 }
 
+.fund-type .learn-more-button {
+  margin-top: auto;
+}
+
 .learn-more-button:hover {
   background-color: #388E3C;
 }
 
-/* Chart and table styling */
+/* Fund examples, charts and tables */
+.fund-example {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.fund-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
 .chart-container {
   margin: 30px 0;
   text-align: center;
@@ -345,138 +338,29 @@ html {
   background-color: #f9f9f9;
 }
 
-/* Fund example styling */
-.fund-example {
-  margin: 30px 0;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.fund-details {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 20px;
-}
-
-
-/* Additional mobile optimizations */
-@media (max-width: 480px) {
-  .page-title-container h1 {
-    font-size: 1.8rem;
-  }
-}
-
-/* Force fund type alignment */
-.fund-type .risk-level {
-  width: 100%;
-}
-
-.risk-level span {
-  width: 100%;
-  display: block !important;
-  white-space: nowrap !important;
-}
-/* Make buttons maintain consistent height regardless of text content */
-.learn-more-button {
+/* Subtopic navigation */
+.subtopic-navigation {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px; /* Set a fixed minimum height for all buttons */
-  text-align: center;
-  width: 100%;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 25px 0;
 }
 
-/* Make fund type cards have a more consistent layout */
-.fund-type {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
+.subtopic-navigation a {
+  background-color: #f5f5f5;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
 }
 
-/* Push the button to the bottom of the card */
-.fund-type .learn-more-button {
-  margin-top: auto;
-}/* Make buttons maintain consistent height regardless of text content */
-.learn-more-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px; /* Set a fixed minimum height for all buttons */
-  text-align: center;
-  width: 100%;
+.subtopic-navigation a:hover {
+  background-color: #e0e0e0;
+  color: #4CAF50;
 }
 
-/* Make fund type cards have a more consistent layout */
-.fund-type {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-
-/* Push the button to the bottom of the card */
-.fund-type .learn-more-button {
-  margin-top: auto;
-}
-/* Better risk meter and button alignment */
-.fund-type {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 300px;
-}
-
-.fund-type > h3,
-.fund-type > p {
-  margin-bottom: 15px;
-}
-
-/* Create flex spaces to push items to desired positions */
-.fund-type .risk-level {
-  margin-top: auto;
-  margin-bottom: 15px;
-  width: 100%;
-}
-
-.fund-type .learn-more-button {
-  margin-top: 15px;
-  width: 100%;
-}
-
-/* Ensure risk text doesn't wrap */
-.risk-level span {
-  display: inline-block;
-  white-space: nowrap;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-/* Make all buttons same height */
-.learn-more-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  text-align: center;
-}
-/* Add this to the bottom of your mutual-funds.css file */
-@media (max-width: 480px) {
-  /* Responsive button text sizing for mobile */
-  .learn-more-button {
-    font-size: clamp(12px, 3.5vw, 16px);
-    padding: 10px 8px;
-    line-height: 1.2;
-    height: auto;
-    min-height: 44px;
-  }
-}
-
-
-
-/* Accordion FAQ styling */
+/* FAQ Accordion styling */
 .faq-accordion {
   margin-bottom: 40px;
 }
@@ -543,4 +427,46 @@ html {
   margin-bottom: 15px;
 }
 
+/* Standard FAQ styling (non-accordion) */
+.faq-item {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 25px;
+}
 
+.faq-item h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .page-layout {
+    flex-direction: column;
+  }
+  
+  .quick-navigation {
+    width: 100%;
+    position: static;
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+  
+  .fund-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-title-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .learn-more-button {
+    font-size: clamp(12px, 3.5vw, 16px);
+    padding: 10px 8px;
+    line-height: 1.2;
+    height: auto;
+    min-height: 44px;
+  }
+}
