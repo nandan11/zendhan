@@ -34,6 +34,8 @@ html {
   margin-bottom: 10px;
 }
 
+
+
 /* Info cards and example blocks */
 .info-card {
   background-color: #f9f9f9;
@@ -215,6 +217,12 @@ html {
 
 .content-block:first-of-type {
   margin-top: 10px; /* Reduced from 20px to decrease space after title */
+}
+
+/* Main headings */
+.main-content h2:first-of-type,
+h2[id="what-are-debt-funds"] {
+  margin-top: 10px;
 }
 
 /* Responsive adjustments */
