@@ -223,6 +223,7 @@ html {
 .main-content h2:first-of-type,
 h2[id="what-are-debt-funds"] {
   margin-top: 10px;
+  margin-left: 20px;
 }
 
 /* Responsive adjustments */
