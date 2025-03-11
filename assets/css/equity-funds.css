@@ -450,3 +450,20 @@ body .page-layout .quick-navigation {
     min-height: 44px;
   }
 }
+/* FIX: REDUCE GAP BETWEEN TITLE AND FIRST HEADING */
+.page-title {
+  margin-bottom: 10px !important;
+}
+
+.page-title-container {
+  margin-bottom: 10px !important;
+}
+
+.content-block:first-of-type {
+  margin-top: 0 !important;
+}
+
+.main-content h2:first-of-type,
+h2[id="what-are-equity-funds"] {
+  margin-top: 20px !important;
+}
