@@ -17,7 +17,7 @@
         <div class="header-container">
             <a href="{{ '/' | relative_url }}" class="logo">Zendhan</a>
             <!-- Add this before your existing nav tag in the header -->
-        <div class="mobile-menu-toggle">
+        <div class="mobile-menu-toggle" onclick="document.querySelector('nav').style.display = window.getComputedStyle(document.querySelector('nav')).display !== 'none' ? 'none' : 'block';">
           <span></span>
           <span></span>
           <span></span>
