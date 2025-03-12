@@ -25,7 +25,11 @@ header {
     top: 0;
     z-index: 100;
 }
-
+/* Container for logo AND hamburger */
+.logo-container {
+    display: flex;
+    align-items: center; /* Vertically center logo and hamburger */
+}
 .header-container {
     position: relative;
     max-width: 1200px;
@@ -554,6 +558,7 @@ footer {
   width: 30px;
   height: 21px;
   cursor: pointer;
+  margin-right: 15px; /* Add some space between icon and logo */
 }
 
 .mobile-menu-toggle span {
@@ -570,9 +575,11 @@ footer {
   
   .mobile-menu-toggle {
     display: flex;
+    /* order: -1;  No longer needed, we're using a container */
+  }
+  .logo-container{
     order: -1;
   }
-  
   nav {
     position: absolute;
     top: 70px; /* Adjust based on your header height */
