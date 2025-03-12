@@ -15,13 +15,17 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="{{ '/' | relative_url }}" class="logo">Zendhan</a>
+             <!-- Wrap logo and toggle in a container -->
+            <div class="logo-container">
+           
             <!-- Add this before your existing nav tag in the header -->
         <div class="mobile-menu-toggle">
           <span></span>
           <span></span>
           <span></span>
         </div>
+         <a href="{{ '/' | relative_url }}" class="logo">Zendhan</a>
+       </div>
             <nav>
     <ul>
         <li class="nav-dropdown">
