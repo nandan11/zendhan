@@ -1,93 +1,44 @@
+/* Financial Terms Page Styles */
 
-/* Scroll padding for anchor links */
-html {
-  scroll-padding-top: 120px; /* Adjust this value based on your header height */
-}
-
-/* Page layout structure */
-.page-layout {
-  display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Content block styling */
-.content-block {
+/* Hero Section (Replacing with centered green banner like Debt Funds page) */
+.hero {
+  background: #6ab04c;
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
   margin-bottom: 40px;
 }
 
-.content-block p {
-  margin-bottom: 20px;
-  line-height: 1.7;
-}
-
-.content-block h2 {
-  margin-top: 40px;
-  margin-bottom: 25px;
-}
-
-.content-block h3 {
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-.content-block ul, .content-block ol {
-  margin-bottom: 25px;
-  margin-left: 25px;
-}
-
-.content-block li {
-  margin-bottom: 10px;
-}
-
-
-
-/* Info cards and example blocks */
-.info-card {
-  background-color: #f9f9f9;
-  border-left: 4px solid #4CAF50;
-  padding: 20px;
-  margin: 30px 0;
-  border-radius: 4px;
-}
-
-.example-block {
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 4px;
-  margin: 20px 0;
-}
-
-.example-block ul {
-  margin-left: 25px;
-}
-
-/* Fund examples */
-.fund-example {
-  margin: 30px 0;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* FAQ styling */
-.faq-item {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 25px;
-}
-
-/* Page layout with sidebar */
-.page-layout {
-  display: flex;
-  max-width: 1200px;
+.hero-container {
+  max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.quick-navigation {
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: white;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Financial Terms Content Layout */
+.financial-terms-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+}
+
+/* Quick Navigation Sidebar */
+.terms-navigation {
   position: sticky;
   top: 20px;
   align-self: flex-start;
@@ -105,13 +56,13 @@ html {
   flex-shrink: 0;
 }
 
-.quick-navigation h3 {
+.terms-navigation h3 {
   margin-bottom: 15px;
   font-size: 18px;
   color: #333;
 }
 
-.quick-navigation ul {
+.terms-navigation ul {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -120,12 +71,12 @@ html {
   gap: 10px;
 }
 
-.quick-navigation li {
+.terms-navigation li {
   margin: 0;
   width: 100%;
 }
 
-.quick-navigation a {
+.terms-navigation a {
   text-decoration: none;
   color: #333;
   font-size: 16px;
@@ -135,195 +86,132 @@ html {
   transition: all 0.3s ease;
 }
 
-.quick-navigation a:hover,
-.quick-navigation a.active {
+.terms-navigation a:hover,
+.terms-navigation a.active {
   background-color: #e0e0e0;
   color: #4CAF50;
 }
 
-.main-content {
+/* Terms Container */
+.terms-container {
   flex-grow: 1;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-/* Call to action box */
-.cta-box {
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  padding: 25px;
-  margin: 30px 0;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-top: 15px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-}
-
-.cta-button:hover {
-  background-color: #388E3C;
-}
-
-/* Page title styling */
-.page-title {
-  background: #6ab04c; /* Solid green color */
-  padding: 40px 0;
-  text-align: center;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.page-title-container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  margin-bottom: 10px;
 }
 
-.page-title h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: white;
-  font-weight: 600;
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
-.page-title p {
-  font-size: 1.2rem;
-  color: white;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.content-block:first-of-type {
-  margin-top: 10px; /* Reduced from 20px to decrease space after title */
-}
-
-/* Main headings */
-.main-content h2:first-of-type,
-h2[id="what-are-debt-funds"] {
-  margin-top: 10px;
-  
-}
-
-/* FAQ Accordion styling */
-.faq-accordion {
-  margin-bottom: 40px;
-}
-
-.faq-accordion .faq-item {
-  border: 1px solid #eee;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-}
-
-.faq-accordion .faq-question {
-  background-color: #f9f9f9;
-  padding: 15px 20px;
-  cursor: pointer;
-  position: relative;
-  font-weight: 600;
+/* Individual Term Styling */
+.terms-list {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background-color 0.3s;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.faq-accordion .faq-question:hover {
-  background-color: #f5f5f5;
+.term {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eaeaea;
 }
 
-.faq-accordion .faq-question::after {
-  content: "+";
-  font-size: 22px;
-  color: #4CAF50;
-  margin-left: 10px;
-  transition: transform 0.3s;
+.term:last-child {
+  border-bottom: none;
 }
 
-.faq-accordion .faq-question.active::after {
-  content: "−";
-  transform: rotate(0deg);
+.term h3 {
+  color: #333;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
 }
 
-.faq-accordion .faq-answer {
-  padding: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+.term p {
+  line-height: 1.7;
+  margin-bottom: 15px;
 }
 
-.faq-accordion .faq-answer.active {
-  padding: 20px;
-  max-height: 500px; /* Adjust as needed */
+/* Example Box Styling */
+.example {
+  background-color: #f9f9f9;
+  border-left: 4px solid #6ab04c;
+  padding: 15px;
+  border-radius: 4px;
+  margin: 15px 0;
 }
 
-.faq-accordion .faq-answer p {
-  margin-top: 0;
+.example p {
+  margin: 0;
+}
+
+/* Sub-terms Styling */
+.sub-terms {
+  padding-left: 20px;
+  margin: 15px 0;
+}
+
+.sub-terms p {
   margin-bottom: 10px;
 }
 
-.faq-accordion .faq-answer p:last-child {
+.sub-terms p:last-child {
   margin-bottom: 0;
 }
 
-.faq-accordion .faq-answer ul {
-  margin-bottom: 15px;
+/* Lists in examples */
+.example ul {
+  margin: 10px 0 10px 25px;
 }
 
-/* Standard FAQ styling (non-accordion) */
-.faq-item {
-  margin-bottom: 30px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 25px;
+.example li {
+  margin-bottom: 5px;
 }
 
-.faq-item h4 {
-  margin-bottom: 15px;
+/* Glossary Summary Section */
+.glossary-summary {
+  background-color: #f5f5f5;
+  padding: 25px;
+  border-radius: 8px;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+.glossary-summary h3 {
   color: #333;
+  margin-bottom: 15px;
 }
 
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-  .page-layout {
+  .financial-terms-content {
     flex-direction: column;
   }
   
-  .quick-navigation {
+  .terms-navigation {
     width: 100%;
     min-width: 100%;
     max-width: 100%;
     position: static;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     margin-right: 0;
     flex-basis: auto;
   }
   
-  .fund-details {
-    grid-template-columns: 1fr;
+  .terms-container {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .page-title-container h1 {
+  .hero h1 {
     font-size: 1.8rem;
   }
   
-  .learn-more-button {
-    font-size: clamp(12px, 3.5vw, 16px);
-    padding: 10px 8px;
-    line-height: 1.2;
-    height: auto;
-    min-height: 44px;
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .term h3 {
+    font-size: 1.2rem;
   }
 }
