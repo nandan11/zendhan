@@ -215,6 +215,85 @@ h2[id="what-are-debt-funds"] {
   
 }
 
+/* FAQ Accordion styling */
+.faq-accordion {
+  margin-bottom: 40px;
+}
+
+.faq-accordion .faq-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.faq-accordion .faq-question {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background-color 0.3s;
+}
+
+.faq-accordion .faq-question:hover {
+  background-color: #f5f5f5;
+}
+
+.faq-accordion .faq-question::after {
+  content: "+";
+  font-size: 22px;
+  color: #4CAF50;
+  margin-left: 10px;
+  transition: transform 0.3s;
+}
+
+.faq-accordion .faq-question.active::after {
+  content: "−";
+  transform: rotate(0deg);
+}
+
+.faq-accordion .faq-answer {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.faq-accordion .faq-answer.active {
+  padding: 20px;
+  max-height: 500px; /* Adjust as needed */
+}
+
+.faq-accordion .faq-answer p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.faq-accordion .faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-accordion .faq-answer ul {
+  margin-bottom: 15px;
+}
+
+/* Standard FAQ styling (non-accordion) */
+.faq-item {
+  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 25px;
+}
+
+.faq-item h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .page-layout {
