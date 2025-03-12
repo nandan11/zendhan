@@ -73,16 +73,24 @@
     </footer>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Direct style toggle for mobile menu
     var toggle = document.querySelector('.mobile-menu-toggle');
     var nav = document.querySelector('nav');
     
     if (toggle && nav) {
       toggle.onclick = function() {
-        if (nav.style.display === 'block') {
+        // Get the computed style (what's actually showing)
+        var computedStyle = window.getComputedStyle(nav);
+        
+        // Log for debugging
+        console.log('Current display style:', computedStyle.display);
+        
+        // Toggle based on the computed style
+        if (computedStyle.display !== 'none') {
           nav.style.display = 'none';
+          console.log('Menu hidden');
         } else {
           nav.style.display = 'block';
+          console.log('Menu shown');
         }
       };
     }
