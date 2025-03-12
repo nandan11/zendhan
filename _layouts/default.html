@@ -71,32 +71,20 @@
             </div>
         </div>
     </footer>
- <script>
-  // Simple direct implementation
+<script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Get the toggle button
+    // Direct style toggle for mobile menu
     var toggle = document.querySelector('.mobile-menu-toggle');
-    // Get the navigation menu
     var nav = document.querySelector('nav');
     
-    // Log elements to ensure they're found
-    console.log('Toggle found:', toggle);
-    console.log('Nav found:', nav);
-    
-    // Add click event listener
     if (toggle && nav) {
-      toggle.addEventListener('click', function() {
-        console.log('Mobile menu clicked');
-        
-        // Direct style manipulation
+      toggle.onclick = function() {
         if (nav.style.display === 'block') {
           nav.style.display = 'none';
-          console.log('Menu hidden');
         } else {
           nav.style.display = 'block';
-          console.log('Menu shown');
         }
-      });
+      };
     }
   });
 </script>
