@@ -72,7 +72,19 @@
         </div>
     </footer>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+    var ul = nav.querySelector('ul');
+if (ul) {
+    if (nav.classList.contains('mobile-menu-active')) {
+        ul.style.display = 'flex';
+    } else {
+        ul.style.display = 'none';
+    }
+}
+</script>
+</body>
+</html>
+
+/*  document.addEventListener('DOMContentLoaded', function() {
   var toggle = document.querySelector('.mobile-menu-toggle');
   var nav = document.querySelector('nav');
   
@@ -82,7 +94,4 @@
       console.log('Menu toggled, active:', nav.classList.contains('mobile-menu-active'));
     });
   }
-});
-</script>
-</body>
-</html>
+});*/
