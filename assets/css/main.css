@@ -544,3 +544,84 @@ footer {
     padding: 15px;
     margin-top: 15px;
 }
+
+/* Mobile menu styles */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 15px;
+  }
+  
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  
+  nav {
+    position: absolute;
+    top: 70px; /* Adjust based on your header height */
+    left: 0;
+    width: 100%;
+    background: white;
+    display: none;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+  nav.mobile-menu-active {
+    display: block;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    padding: 0;
+  }
+  
+  nav ul li {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li a {
+    padding: 15px;
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    box-shadow: none;
+    width: 100%;
+  }
+  
+  .nav-dropdown:hover .dropdown-content {
+    display: none; /* Disable hover effect on mobile */
+  }
+  
+  /* Add a class for active dropdown */
+  .dropdown-active .dropdown-content {
+    display: block;
+  }
+  
+  /* Style for dropdown items */
+  .dropdown-content a {
+    padding-left: 30px;
+    background: #f9f9f9;
+  }
+}
