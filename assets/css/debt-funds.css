@@ -302,9 +302,12 @@ h2[id="what-are-debt-funds"] {
   
   .quick-navigation {
     width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     position: static;
     margin-bottom: 20px;
     margin-right: 0;
+    flex-basis: auto;
   }
   
   .fund-details {
