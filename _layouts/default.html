@@ -17,7 +17,7 @@
         <div class="header-container">
             <a href="{{ '/' | relative_url }}" class="logo">Zendhan</a>
             <!-- Add this before your existing nav tag in the header -->
-        <div class="mobile-menu-toggle" onclick="document.querySelector('nav').style.display = window.getComputedStyle(document.querySelector('nav')).display !== 'none' ? 'none' : 'block';">
+        <div class="mobile-menu-toggle">
           <span></span>
           <span></span>
           <span></span>
@@ -73,28 +73,16 @@
     </footer>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    var toggle = document.querySelector('.mobile-menu-toggle');
-    var nav = document.querySelector('nav');
-    
-    if (toggle && nav) {
-      toggle.onclick = function() {
-        // Get the computed style (what's actually showing)
-        var computedStyle = window.getComputedStyle(nav);
-        
-        // Log for debugging
-        console.log('Current display style:', computedStyle.display);
-        
-        // Toggle based on the computed style
-        if (computedStyle.display !== 'none') {
-          nav.style.display = 'none';
-          console.log('Menu hidden');
-        } else {
-          nav.style.display = 'block';
-          console.log('Menu shown');
-        }
-      };
-    }
-  });
+  var toggle = document.querySelector('.mobile-menu-toggle');
+  var nav = document.querySelector('nav');
+  
+  if (toggle && nav) {
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('mobile-menu-active');
+      console.log('Menu toggled, active:', nav.classList.contains('mobile-menu-active'));
+    });
+  }
+});
 </script>
 </body>
 </html>
