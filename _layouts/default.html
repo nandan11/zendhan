@@ -71,14 +71,28 @@
             </div>
         </div>
     </footer>
-    <script>
+  <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu toggle functionality
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav');
     
     mobileMenuToggle.addEventListener('click', function() {
       nav.classList.toggle('mobile-menu-active');
       mobileMenuToggle.classList.toggle('active');
+    });
+    
+    // Dropdown menu functionality for mobile
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    
+    dropdowns.forEach(dropdown => {
+      // For mobile: click to toggle dropdown
+      dropdown.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          this.classList.toggle('dropdown-active');
+        }
+      });
     });
   });
 </script>
