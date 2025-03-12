@@ -590,6 +590,10 @@ footer {
   nav ul {
     flex-direction: column;
     padding: 0;
+    display: none;
+  }
+  nav.mobile-menu-active ul {
+    display: flex; /* Added to show the ul when menu is active */
   }
   
   nav ul li {
