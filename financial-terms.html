@@ -14,11 +14,27 @@ custom_css:
 
 <!-- Financial Terms Content -->
 <section class="financial-terms-content">
+    <!-- Quick Navigation Sidebar -->
+    <div class="terms-navigation">
+        <h3>Quick Navigation</h3>
+        <ul>
+            <li><a href="#nav-basics">Basic Terms</a></li>
+            <li><a href="#nav-funds">Fund Types</a></li>
+            <li><a href="#nav-investment">Investment Methods</a></li>
+            <li><a href="#nav-tax">Tax & Returns</a></li>
+            <li><a href="#nav-plans">Plan Types</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
     <div class="terms-container">
         <h2>Common Financial Terms</h2>
         <p class="intro-text">Understanding these key financial terms will help you navigate the investment landscape with confidence. Below are the most important terms you should know before making investment decisions.</p>
         
         <div class="terms-list">
+            <!-- Basic Terms -->
+            <div id="nav-basics"></div>
+            
             <!-- Term 1 -->
             <div class="term">
                 <h3>1. Net Asset Value (NAV)</h3>
@@ -46,6 +62,9 @@ custom_css:
                 </div>
             </div>
 
+            <!-- Fund Types -->
+            <div id="nav-funds"></div>
+            
             <!-- Term 4 -->
             <div class="term">
                 <h3>4. Equity Funds</h3>
@@ -70,6 +89,9 @@ custom_css:
                 <p>A mix of both stocks and bonds, balancing risk and reward.</p>
             </div>
 
+            <!-- Investment Methods -->
+            <div id="nav-investment"></div>
+            
             <!-- Term 7 -->
             <div class="term">
                 <h3>7. Systematic Investment Plan (SIP)</h3>
@@ -118,6 +140,9 @@ custom_css:
                 </div>
             </div>
 
+            <!-- Tax & Returns -->
+            <div id="nav-tax"></div>
+            
             <!-- Term 13 -->
             <div class="term">
                 <h3>13. Tax-Saving Mutual Funds (ELSS)</h3>
@@ -165,6 +190,9 @@ custom_css:
                 </div>
             </div>
 
+            <!-- Plan Types -->
+            <div id="nav-plans"></div>
+            
             <!-- Term 17 -->
             <div class="term">
                 <h3>17. Direct vs Regular Plan</h3>
@@ -212,6 +240,31 @@ custom_css:
         <div class="glossary-summary">
             <h3>Ready to Start Investing?</h3>
             <p>Now that you understand these essential financial terms, you're better equipped to make informed investment decisions. Remember, knowledge is the first step toward building financial security.</p>
+            <a href="#" class="cta-button">Explore Investment Options</a>
         </div>
     </div>
 </section>
+
+<!-- JavaScript for Navigation Highlighting -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all navigation links
+    const navLinks = document.querySelectorAll('.terms-navigation a');
+    
+    // Add click event to each link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+            
+            // Add active class to clicked link
+            this.classList.add('active');
+        });
+    });
+    
+    // Set first link as active by default
+    if (navLinks.length > 0) {
+        navLinks[0].classList.add('active');
+    }
+});
+</script>
