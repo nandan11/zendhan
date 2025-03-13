@@ -1,4 +1,16 @@
 /* Financial Terms Page Styles */
+/* Scroll padding for anchor links */
+html {
+  scroll-padding-top: 120px; /* Adjust this value based on your header height */
+}
+
+/* Page layout structure */
+.page-layout {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 /* Hero Section (Replacing with centered green banner like Debt Funds page) */
 .hero {
