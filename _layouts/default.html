@@ -19,11 +19,11 @@
             <div class="logo-container">
            
             <!-- Add this before your existing nav tag in the header -->
-        <div class="mobile-menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <div class="mobile-menu-toggle hamburger"> <!-- Added "hamburger" class -->
+          <span class="bar"></span>  <!-- Added "bar" class -->
+          <span class="bar"></span>  <!-- Added "bar" class -->
+          <span class="bar"></span>  <!-- Added "bar" class -->
+       </div>
          <a href="{{ '/' | relative_url }}" class="logo">Zendhan</a>
        </div>
             <nav>
@@ -83,6 +83,7 @@
             if (toggle && nav) {
                 toggle.addEventListener('click', function() {
                     nav.classList.toggle('mobile-menu-active');
+                    toggle.classList.toggle('active');
                     console.log('Menu toggled, active:', nav.classList.contains('mobile-menu-active'));
 
                     var ul = nav.querySelector('ul');
