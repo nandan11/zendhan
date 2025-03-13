@@ -315,6 +315,10 @@ h2[id="what-are-debt-funds"] {
     padding: 15px; /* Add some padding */
   }
   
+   header, .site-header {
+    position: relative;
+    z-index: 10; /* Higher z-index than the navigation */
+  }
   .fund-details {
     grid-template-columns: 1fr;
   }
