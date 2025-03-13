@@ -309,6 +309,10 @@ h2[id="what-are-debt-funds"] {
     margin-right: 0;
     flex-basis: auto;
     display: block;
+    background-color: #f9f9f9; /* Make sure background color is visible */
+    z-index: 1; /* Ensure it's above other content */
+    border: 1px solid #e0e0e0; /* Add border for visibility */
+    padding: 15px; /* Add some padding */
   }
   
   .fund-details {
