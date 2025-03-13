@@ -319,6 +319,19 @@ h2[id="what-are-debt-funds"] {
     position: relative;
     z-index: 10; /* Higher z-index than the navigation */
   }
+  /* If you have a hamburger menu, ensure it stays on top */
+  .hamburger-menu, .site-logo {
+    position: relative;
+    z-index: 11; /* Even higher z-index */
+  }
+  
+  /* Make sure the sidebar doesn't stick when scrolling on mobile */
+  .quick-navigation {
+    top: auto; /* Remove the sticky top property */
+    overflow-y: visible; /* Allow content to flow normally */
+    max-height: none; /* Remove max-height constraint */
+  }
+}
   .fund-details {
     grid-template-columns: 1fr;
   }
