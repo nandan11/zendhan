@@ -5,7 +5,9 @@
   background: #6ab04c;
   padding: 40px 0;
   text-align: center;
-  width: 100%;
+  /*width: 100%;*/
+  max-width: 900px;
+  margin: 0 auto 40px; /* Add this line (auto for left/right, 40px for bottom) */
   margin-bottom: 40px;
 }
 
