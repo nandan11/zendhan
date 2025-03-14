@@ -26,6 +26,7 @@ html {
 /* Page title styling */
 .page-title {
   display: flex;
+  flex-direction: row;
   background: #6ab04c; /* Solid green color */
   padding: 40px 0;
   text-align: center;
