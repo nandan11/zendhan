@@ -321,10 +321,10 @@ h2[id="what-are-debt-funds"] {
     top: auto; /* Remove the sticky top property */
     overflow-y: visible; /* Allow content to flow normally */
     max-height: none; /* Remove max-height constraint */
-    order: 1;
+    order: 0;
   }
   .main-content {
-    order: 2; /* Places main content after navigation */
+    order: 1; /* Places main content after navigation */
   }
    header, .site-header {
     position: relative;
