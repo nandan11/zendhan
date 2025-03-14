@@ -366,6 +366,31 @@ h2[id="what-are-equity-funds"] {
   margin: 30px 0;
   text-align: center;
 }
+/* Table responsive styling */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+/* Ensure the table takes full width of its container */
+.table-responsive .performance-table {
+  margin-bottom: 0;
+  min-width: 650px; /* Set a minimum width for the table */
+}
+
+/* Make sure the main container doesn't overflow */
+.main-content {
+  overflow-x: hidden;
+}
+
+/* Ensure page container doesn't cause horizontal scroll */
+.page-layout {
+  overflow-x: hidden;
+  width: 100%;
+}
 
 /* Navigation links for subtopics */
 .subtopic-navigation {
@@ -472,7 +497,18 @@ h2[id="what-are-equity-funds"] {
 @media (max-width: 768px) {
   .page-layout {
     flex-direction: column;
+     padding: 20px 15px;
   }
+  .content-block {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .table-responsive {
+    margin-left: -5px;
+    margin-right: -5px;
+    width: calc(100% + 10px);
+  }
+}
   .page-title {
     order: -1; /* Ensures title comes first */
     width: 100%;
