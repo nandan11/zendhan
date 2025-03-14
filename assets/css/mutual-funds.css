@@ -24,8 +24,7 @@ html {
   padding: 40px 0;
   text-align: center;
   margin-bottom: 10px;
-  /*width: 100%;*/
-  flex: 1;
+  width: 100%;
 }
 
 .page-title-container {
