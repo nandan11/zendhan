@@ -469,7 +469,7 @@ h2[id="what-are-mutual-funds"] {
     position: relative;
     z-index: 11; /* Even higher z-index */
   }
-  * Make sure the sidebar doesn't stick when scrolling on mobile */
+  /* Make sure the sidebar doesn't stick when scrolling on mobile */
   .quick-navigation {
     top: auto; /* Remove the sticky top property */
     overflow-y: visible; /* Allow content to flow normally */
