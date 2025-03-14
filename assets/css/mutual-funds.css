@@ -450,6 +450,7 @@ h2[id="what-are-mutual-funds"] {
     position: static;
     margin-bottom: 20px;
     margin-right: 0;
+    display: block;
   }
   
   .fund-details {
