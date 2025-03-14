@@ -453,9 +453,11 @@ h2[id="what-are-mutual-funds"] {
     margin-bottom: 20px;
     margin-right: 0;
     display: block;
-    flex-basis: auto;
-    z-index: 1; /* Lower z-index than your header */
-    box-shadow: none; /* Remove shadow to make it less intrusive */
+    background-color: #f9f9f9; /* Make sure background color is visible */
+    z-index: 1; /* Ensure it's above other content */
+    border: 1px solid #e0e0e0; /* Add border for visibility */
+    padding: 15px; /* Add some padding */
+    order: 1;
   }
   .main-content {
     width: 100%;
