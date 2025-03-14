@@ -109,7 +109,7 @@ html {
 /* Terms Container */
 .terms-container {
   flex-grow: 1;
-  max-width: 800px;
+  max-width: 900px;
 }
 
 .intro-text {
