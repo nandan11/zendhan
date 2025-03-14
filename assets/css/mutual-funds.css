@@ -95,7 +95,7 @@ h2[id="what-are-mutual-funds"] {
 /* Quick navigation sidebar */
 .quick-navigation {
   position: sticky;
-  top: 20px;
+  top: 0px;
   align-self: flex-start;
   width: 250px;
   max-height: 90vh;
