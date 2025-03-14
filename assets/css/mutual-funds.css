@@ -456,6 +456,7 @@ h2[id="what-are-mutual-funds"] {
     position: relative;
     margin-bottom: 20px;
     margin-right: 0;
+    flex-basis: auto;
     display: block;
     background-color: #f9f9f9; /* Make sure background color is visible */
     z-index: 1; /* Ensure it's above other content */
@@ -463,9 +464,11 @@ h2[id="what-are-mutual-funds"] {
     padding: 15px; /* Add some padding */
     order: 1;
   }
+
   .main-content {
     width: 100%;
-    padding-top: 15px; /* Add some space between nav and content */
+    padding-top: 15px;
+    order: 2;/* Add some space between nav and content */
   }
   header, .site-header {
     position: relative;
