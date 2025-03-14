@@ -444,7 +444,11 @@ h2[id="what-are-mutual-funds"] {
   .page-layout {
     flex-direction: column;
   }
-  
+  .page-title {
+    order: -1; /* Ensures title comes first */
+    width: 100%;
+    margin-bottom: 20px;
+  }
   .quick-navigation {
     width: 100%;
     min-width: 100%;
