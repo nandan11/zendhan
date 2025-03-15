@@ -17,7 +17,10 @@ html {
   padding-left: 0;
   padding-right: 0;
   overflow-x: visible;
+  width: 100%;
+  margin-top: 0;
 }
+
 
 /* Quick navigation sidebar */
 .quick-navigation {
@@ -37,6 +40,13 @@ html {
   flex-basis: 280px;
   flex-shrink: 0;
   z-index: 1;
+}
+
+/* Right side content container */
+.right-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Take up remaining horizontal space */
 }
 
 .quick-navigation h3 {
@@ -77,6 +87,7 @@ html {
 
 /* Page title styling */
 .page-title {
+  display: flex;
   background: #6ab04c;
   padding: 40px 0;
   text-align: center;
