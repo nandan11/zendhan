@@ -492,7 +492,7 @@ h2[id="what-are-mutual-funds"] {
   }
 
   .main-content {
-    /*order: 1;/* Add some space between nav and content */
+    order: 2;/* Add some space between nav and content */
     width: 100%;
     padding-top: 15px;
     
