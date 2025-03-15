@@ -43,3 +43,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to check if we're on mobile
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  // Function to rearrange elements
+  function rearrangeElements() {
+    const pageLayout = document.querySelector('.page-layout');
+    const quickNavigation = document.querySelector('.quick-navigation');
+    const rightContent = document.querySelector('.right-content');
+    const pageTitle = document.querySelector('.page-title');
+    const mainContent = document.querySelector('.main-content');
+    
+    if (isMobile()) {
+      // On mobile: Title -> Navigation -> Main Content
+      pageLayout.innerHTML = ''; // Clear the container
+      
+      // Append in desired order
+      pageLayout.appendChild(pageTitle);
+      pageLayout.appendChild(quickNavigation);
+      pageLayout.appendChild(mainContent);
+    } else {
+      // On desktop: restore original structure
+      pageLayout.innerHTML = ''; // Clear the container
+      
+      // Recreate original structure
+      pageLayout.appendChild(quickNavigation);
+      rightContent.innerHTML = ''; // Clear right content
+      rightContent.appendChild(pageTitle);
+      rightContent.appendChild(mainContent);
+      pageLayout.appendChild(rightContent);
+    }
+  }
+
+  // Run on page load
+  rearrangeElements();
+  
+  // Run when window is resized
+  window.addEventListener('resize', rearrangeElements);
+});
