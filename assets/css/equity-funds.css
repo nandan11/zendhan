@@ -16,6 +16,7 @@ html {
   flex-grow: 1;
   padding-left: 0;
   padding-right: 0;
+  overflow-x: visible;
 }
 
 /* Quick navigation sidebar */
@@ -35,6 +36,7 @@ html {
   margin-right: 30px;
   flex-basis: 280px;
   flex-shrink: 0;
+  z-index: 1;
 }
 
 .quick-navigation h3 {
@@ -106,6 +108,8 @@ html {
 /* Content blocks */
 .content-block {
   margin-bottom: 40px;
+  display: block; /* Ensure visibility */
+  width: 100%;
 }
 
 .content-block:first-of-type {
@@ -508,7 +512,7 @@ h2[id="what-are-equity-funds"] {
     margin-right: -5px;
     width: calc(100% + 10px);
   }
-}
+
   .page-title {
     order: -1; /* Ensures title comes first */
     width: 100%;
@@ -540,10 +544,12 @@ h2[id="what-are-equity-funds"] {
     padding-top: 15px;
     
   }
+  
   header, .site-header {
     position: relative;
     z-index: 10; /* Higher z-index than the navigation */
   }
+  
   .hamburger-menu, .site-logo {
     position: relative;
     z-index: 11; /* Even higher z-index */
@@ -553,6 +559,7 @@ h2[id="what-are-equity-funds"] {
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 480px) {
   .page-title-container h1 {
     font-size: 1.8rem;
