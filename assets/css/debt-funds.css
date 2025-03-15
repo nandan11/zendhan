@@ -13,6 +13,16 @@ html {
   padding: 20px;
 }
 
+/* Main content area */
+.main-content {
+  flex-grow: 1;
+  padding-left: 0;
+  padding-right: 0;
+  overflow-x: visible;
+  width: 100%;
+  margin-top: 0;
+}
+
 /* Content block styling */
 .content-block {
   margin-bottom: 40px;
@@ -104,6 +114,13 @@ html {
   margin-right: 30px;
   flex-basis: 280px;
   flex-shrink: 0;
+  z-index: 1;
+}
+/* Right side content container */
+.right-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Take up remaining horizontal space */
 }
 
 .quick-navigation h3 {
@@ -142,11 +159,6 @@ html {
   color: #4CAF50;
 }
 
-.main-content {
-  flex-grow: 1;
-  padding-left: 0;
-  padding-right: 0;
-}
 
 /* Call to action box */
 .cta-box {
@@ -174,9 +186,11 @@ html {
   background-color: #388E3C;
 }
 
+
 /* Page title styling */
 .page-title {
-  background: #6ab04c; /* Solid green color */
+  display: flex;
+  background: #6ab04c;
   padding: 40px 0;
   text-align: center;
   margin-bottom: 10px;
@@ -298,6 +312,16 @@ h2[id="what-are-debt-funds"] {
 @media (max-width: 768px) {
   .page-layout {
     flex-direction: column;
+     padding: 20px 15px;
+  }
+  .content-block {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .table-responsive {
+    margin-left: -5px;
+    margin-right: -5px;
+    width: calc(100% + 10px);
   }
   .page-title {
     order: -1; /* Ensures title comes first */
@@ -305,7 +329,8 @@ h2[id="what-are-debt-funds"] {
     margin-bottom: 20px;
   }
   
-  .quick-navigation {
+   .quick-navigation {
+    order: 0;
     width: 100%;
     min-width: 100%;
     max-width: 100%;
@@ -321,11 +346,16 @@ h2[id="what-are-debt-funds"] {
     top: auto; /* Remove the sticky top property */
     overflow-y: visible; /* Allow content to flow normally */
     max-height: none; /* Remove max-height constraint */
-    order: 0;
+    
   }
+
   .main-content {
-    order: 1; /* Places main content after navigation */
+    order: 1;/* Add some space between nav and content */
+    width: 100%;
+    padding-top: 15px;
+    
   }
+  
    header, .site-header {
     position: relative;
     z-index: 10; /* Higher z-index than the navigation */
