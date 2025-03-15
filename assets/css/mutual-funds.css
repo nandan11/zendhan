@@ -454,7 +454,9 @@ h2[id="what-are-mutual-funds"] {
   margin-bottom: 15px;
   color: #333;
 }
-
+div.footer-container:not(footer .footer-container) {
+  display: none !important;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .page-layout {
