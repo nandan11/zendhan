@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Initialize collapsible quick navigation for mobile
+ /*   // Initialize collapsible quick navigation for mobile
     function initMobileNavCollapse() {
         // Create a toggle button for the navigation
         const navToggle = document.createElement('button');
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 navToggle.querySelector('.toggle-icon').textContent = isVisible ? '▼' : '▲';
             });
         }
-    }
+    }*/
     
     // Initialize FAQ accordion functionality
     function initFaqAccordion() {
@@ -170,10 +170,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply layout changes immediately and on resize
     rearrangeForMobile();
     
-    // Initialize the mobile navigation if we have the quick navigation element
+   /* // Initialize the mobile navigation if we have the quick navigation element
     if (quickNav) {
         initMobileNavCollapse();
-    }
+    }*/
     
     // Initialize FAQ accordion
     initFaqAccordion();
