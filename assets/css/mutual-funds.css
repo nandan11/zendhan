@@ -461,12 +461,18 @@ h2[id="what-are-mutual-funds"] {
     flex-direction: column;
   }
   .page-title {
-    order: -1; /* Ensures title comes first */
+    /*order: -1; /* Ensures title comes first */
     width: 100%;
     margin-bottom: 20px;
   }
+  
+  .right-content {
+    order: 0; /* Add this to make right-content appear before quick-navigation */
+    width: 100%;
+  }
+  
   .quick-navigation {
-    order: 0;
+    order: 1;
     width: 100%;
     min-width: 100%;
     max-width: 100%;
@@ -486,7 +492,7 @@ h2[id="what-are-mutual-funds"] {
   }
 
   .main-content {
-    order: 1;/* Add some space between nav and content */
+    /*order: 1;/* Add some space between nav and content */
     width: 100%;
     padding-top: 15px;
     
