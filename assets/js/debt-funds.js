@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
  * 1. Title appears at the top
  * 2. Quick navigation appears below the title
  * 3. Main content follows the navigation
- */
+ 
 
 document.addEventListener('DOMContentLoaded', function() {
     // Elements we need to manipulate
@@ -74,4 +74,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         rearrangeForMobile();
     });
-});
+});*/
