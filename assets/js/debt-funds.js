@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
  * 1. Title appears at the top
  * 2. Quick navigation appears below the title
  * 3. Main content follows the navigation
- 
+ */
 
 document.addEventListener('DOMContentLoaded', function() {
     // Elements we need to manipulate
@@ -39,30 +39,54 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to rearrange layout for mobile
     function rearrangeForMobile() {
         if (isMobile()) {
-            // Ensure proper order on mobile: title -> nav -> content
-            if (pageTitle && quickNav && mainContent) {
-                // First, move the title outside and above the page layout
-                if (pageTitle.parentNode === rightContent) {
-                    pageLayout.parentNode.insertBefore(pageTitle, pageLayout);
+            // We'll use CSS order property instead of moving elements in the DOM
+            // This preserves the element's container context
+            if (rightContent) {
+                // Set flex-direction to column and use order properties
+                rightContent.style.display = 'flex';
+                rightContent.style.flexDirection = 'column';
+                
+                if (pageTitle) {
+                    // Ensure the title has appropriate width
+                    pageTitle.style.width = '100%';
+                    pageTitle.style.order = '1'; // First
                 }
                 
-                // Move the quick nav inside the page layout but before main content
-                if (quickNav.parentNode === pageLayout) {
-                    pageLayout.insertBefore(quickNav, rightContent);
+                if (mainContent) {
+                    mainContent.style.order = '3'; // Last
                 }
+            }
+            
+            if (quickNav) {
+                // Move quick nav to be after title but before content
+                pageLayout.insertBefore(quickNav, rightContent);
+                quickNav.style.order = '2'; // Middle
+                quickNav.style.width = '100%';
+                quickNav.style.marginRight = '0';
             }
         } else {
             // Restore desktop layout
-            if (pageTitle && quickNav && mainContent && rightContent) {
-                // Move title back to right content as the first child
-                if (pageTitle.parentNode !== rightContent) {
-                    rightContent.insertBefore(pageTitle, rightContent.firstChild);
+            if (rightContent) {
+                // Remove the flex display settings
+                rightContent.style.display = '';
+                rightContent.style.flexDirection = '';
+                
+                if (pageTitle) {
+                    pageTitle.style.order = '';
+                    pageTitle.style.width = '';
                 }
                 
-                // Ensure quick nav is directly inside page layout
-                if (quickNav.parentNode !== pageLayout) {
-                    pageLayout.insertBefore(quickNav, rightContent);
+                if (mainContent) {
+                    mainContent.style.order = '';
                 }
+            }
+            
+            if (quickNav) {
+                // Ensure quick nav is directly inside page layout
+                quickNav.style.order = '';
+                quickNav.style.width = '';
+                quickNav.style.marginRight = '';
+                pageLayout.insertBefore(quickNav, rightContent);
             }
         }
     }
@@ -74,4 +98,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', function() {
         rearrangeForMobile();
     });
-});*/
+});
