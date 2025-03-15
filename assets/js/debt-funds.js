@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
 /**
  * Debt Funds Mobile Layout Script
  * 
@@ -31,6 +30,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const pageTitle = document.querySelector('.page-title');
     const mainContent = document.querySelector('.main-content');
     
+    // Original positions to restore when back to desktop
+    let titleOriginalParent = null;
+    let titleOriginalSibling = null;
+    
     // Function to check if we're on mobile (using a breakpoint of 768px)
     function isMobile() {
         return window.innerWidth <= 768;
@@ -39,54 +42,65 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to rearrange layout for mobile
     function rearrangeForMobile() {
         if (isMobile()) {
-            // We'll use CSS order property instead of moving elements in the DOM
-            // This preserves the element's container context
-            if (rightContent) {
-                // Set flex-direction to column and use order properties
-                rightContent.style.display = 'flex';
-                rightContent.style.flexDirection = 'column';
+            // For mobile: We need title, then nav, then content
+            
+            // Step 1: Extract the title from right-content
+            if (pageTitle && pageTitle.parentNode === rightContent) {
+                // Save original positions to restore later
+                titleOriginalParent = rightContent;
+                titleOriginalSibling = pageTitle.nextElementSibling;
                 
-                if (pageTitle) {
-                    // Ensure the title has appropriate width
-                    pageTitle.style.width = '100%';
-                    pageTitle.style.order = '1'; // First
-                }
+                // Move title to the very top of the page-layout parent
+                pageLayout.parentNode.insertBefore(pageTitle, pageLayout);
                 
-                if (mainContent) {
-                    mainContent.style.order = '3'; // Last
-                }
+                // Ensure title has full width
+                pageTitle.style.width = '100%';
             }
             
-            if (quickNav) {
-                // Move quick nav to be after title but before content
-                pageLayout.insertBefore(quickNav, rightContent);
-                quickNav.style.order = '2'; // Middle
+            // Step 2: Move quick nav after the title
+            if (quickNav && pageTitle) {
+                pageLayout.parentNode.insertBefore(quickNav, pageLayout);
+                
+                // Ensure it has full width
                 quickNav.style.width = '100%';
-                quickNav.style.marginRight = '0';
+                quickNav.style.maxWidth = '100%';
+                quickNav.style.margin = '20px 0';
+            }
+            
+            // Step 3: Ensure page-layout only contains the right-content with main-content
+            if (pageLayout) {
+                pageLayout.style.padding = '0';
+                pageLayout.style.flexDirection = 'column';
             }
         } else {
             // Restore desktop layout
-            if (rightContent) {
-                // Remove the flex display settings
-                rightContent.style.display = '';
-                rightContent.style.flexDirection = '';
-                
-                if (pageTitle) {
-                    pageTitle.style.order = '';
-                    pageTitle.style.width = '';
+            
+            // Step 1: Move title back to its original position in right-content
+            if (pageTitle && titleOriginalParent) {
+                if (titleOriginalSibling) {
+                    titleOriginalParent.insertBefore(pageTitle, titleOriginalSibling);
+                } else {
+                    titleOriginalParent.appendChild(pageTitle);
                 }
                 
-                if (mainContent) {
-                    mainContent.style.order = '';
-                }
+                // Reset width
+                pageTitle.style.width = '';
             }
             
-            if (quickNav) {
-                // Ensure quick nav is directly inside page layout
-                quickNav.style.order = '';
+            // Step 2: Move quick nav back to page-layout as first child
+            if (quickNav && pageLayout) {
+                pageLayout.insertBefore(quickNav, pageLayout.firstChild);
+                
+                // Reset styles
                 quickNav.style.width = '';
-                quickNav.style.marginRight = '';
-                pageLayout.insertBefore(quickNav, rightContent);
+                quickNav.style.maxWidth = '';
+                quickNav.style.margin = '';
+            }
+            
+            // Step 3: Reset page-layout styles
+            if (pageLayout) {
+                pageLayout.style.padding = '';
+                pageLayout.style.flexDirection = '';
             }
         }
     }
