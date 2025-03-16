@@ -12,14 +12,14 @@ html {
 }
 
 /* Main content area */
-.main-content {
+/*.main-content {
   flex-grow: 1;
   padding-left: 0;
   padding-right: 0;
   overflow-x: visible;
   width: 100%;
   margin-top: 0;
-}
+}*/
 
 
 /* Quick navigation sidebar */
