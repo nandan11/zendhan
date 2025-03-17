@@ -584,3 +584,42 @@ h2[id="what-are-equity-funds"] {
     min-height: 44px;
   }
 }
+
+/* Add this to your CSS to handle landscape orientation specifically */
+@media (max-width: 915px) and (orientation: landscape) {
+  .page-layout {
+    flex-direction: column;
+    padding: 15px;
+    overflow-x: hidden;
+  }
+  
+  .quick-navigation {
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    top: auto;
+    max-height: none;
+    overflow-y: visible;
+  }
+  
+  .page-title {
+    padding: 20px 0;
+  }
+  
+  .page-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* Fix for content overflow */
+  .right-content {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Ensure two-column grid returns to single column */
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+}
